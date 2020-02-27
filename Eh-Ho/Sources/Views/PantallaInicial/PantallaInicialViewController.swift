@@ -10,17 +10,50 @@ import UIKit
 
 class PantallaInicialViewController: UIViewController {
     
-    // MARK: - Outlets
+    //MARK: - Outets
+    @IBOutlet weak var logo_Rectangulo: UIImageView!
+    @IBOutlet weak var logo_Triangulo: UIImageView!
+    @IBOutlet weak var logo: UIImageView!
+    @IBOutlet weak var logoConstraint: NSLayoutConstraint!
+    @IBOutlet weak var logoHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var logoWidthConstraint: NSLayoutConstraint!
     
-    // MARK: - Cycle life
+    
+    //MARK: - Cycle life
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Pantalla inicial"
-        //self.view.backgroundColor = UIColor.blue
+        
+        self.title = "Splash Screen"
+        logoConstraint.constant -= view.bounds.height
+        logoHeightConstraint.constant = logo.bounds.height + 300
+        logoWidthConstraint.constant = logo.bounds.width + 300
+        
     }
-
-
-    // MARK: - Navigation
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        animationsLogo()
+    }
+    
+    //MARK: - Animations
+    private func animationsLogo() {
+        
+        
+        UIView.animate(withDuration: 5, delay: 0.0, options: .curveEaseOut,
+                       animations: {
+                        self.logoHeightConstraint.constant = self.logo.bounds.height - 300
+                        self.logoWidthConstraint.constant = self.logo.bounds.width - 300
+                        self.logoConstraint.constant = 0.0
+                        self.view.layoutIfNeeded()
+        }) { (success) in
+            
+            if success {
+                //TODO: - Acceder a un ViewController en concreto.
+                print("Ahora debería de ir a una vista que yo decida....")
+            }
+        }
+        
+    }
 
     
 
