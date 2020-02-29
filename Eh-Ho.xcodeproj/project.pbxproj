@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		115D78DB24067E6C003609F2 /* PantallaInicialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115D78D924067E6C003609F2 /* PantallaInicialViewController.swift */; };
 		115D78DC24067E6C003609F2 /* PantallaInicialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 115D78DA24067E6C003609F2 /* PantallaInicialViewController.xib */; };
+		1167DED2240A485700E0DDF0 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1167DED0240A485700E0DDF0 /* PostsViewController.swift */; };
+		1167DED3240A485700E0DDF0 /* PostsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1167DED1240A485700E0DDF0 /* PostsViewController.xib */; };
+		1167DED5240A49E600E0DDF0 /* TopicsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1167DED4240A49E600E0DDF0 /* TopicsViewModel.swift */; };
+		1167DED7240A4A0200E0DDF0 /* TopicsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1167DED6240A4A0200E0DDF0 /* TopicsRouter.swift */; };
+		1167DED9240A525900E0DDF0 /* PostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1167DED8240A525900E0DDF0 /* PostsViewModel.swift */; };
+		1167DEDB240A526800E0DDF0 /* PostsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1167DEDA240A526800E0DDF0 /* PostsRouter.swift */; };
+		118ACE902407D068002987EE /* TopicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118ACE8E2407D068002987EE /* TopicsViewController.swift */; };
+		118ACE912407D068002987EE /* TopicsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 118ACE8F2407D068002987EE /* TopicsViewController.xib */; };
 		1195AD762357EE720056E58F /* SFProDisplay-UltraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1195AD732357EE710056E58F /* SFProDisplay-UltraLight.ttf */; };
 		1195AD772357EE720056E58F /* SFProDisplay-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1195AD742357EE720056E58F /* SFProDisplay-Black.ttf */; };
 		1195AD782357EE720056E58F /* SFProDisplay-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1195AD752357EE720056E58F /* SFProDisplay-Bold.ttf */; };
@@ -23,6 +31,14 @@
 /* Begin PBXFileReference section */
 		115D78D924067E6C003609F2 /* PantallaInicialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantallaInicialViewController.swift; sourceTree = "<group>"; };
 		115D78DA24067E6C003609F2 /* PantallaInicialViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PantallaInicialViewController.xib; sourceTree = "<group>"; };
+		1167DED0240A485700E0DDF0 /* PostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
+		1167DED1240A485700E0DDF0 /* PostsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostsViewController.xib; sourceTree = "<group>"; };
+		1167DED4240A49E600E0DDF0 /* TopicsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsViewModel.swift; sourceTree = "<group>"; };
+		1167DED6240A4A0200E0DDF0 /* TopicsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsRouter.swift; sourceTree = "<group>"; };
+		1167DED8240A525900E0DDF0 /* PostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewModel.swift; sourceTree = "<group>"; };
+		1167DEDA240A526800E0DDF0 /* PostsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsRouter.swift; sourceTree = "<group>"; };
+		118ACE8E2407D068002987EE /* TopicsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsViewController.swift; sourceTree = "<group>"; };
+		118ACE8F2407D068002987EE /* TopicsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopicsViewController.xib; sourceTree = "<group>"; };
 		1195AD732357EE710056E58F /* SFProDisplay-UltraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-UltraLight.ttf"; sourceTree = "<group>"; };
 		1195AD742357EE720056E58F /* SFProDisplay-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Black.ttf"; sourceTree = "<group>"; };
 		1195AD752357EE720056E58F /* SFProDisplay-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Bold.ttf"; sourceTree = "<group>"; };
@@ -89,6 +105,28 @@
 				115D78DA24067E6C003609F2 /* PantallaInicialViewController.xib */,
 			);
 			path = PantallaInicial;
+			sourceTree = "<group>";
+		};
+		1167DECF240A482D00E0DDF0 /* Posts */ = {
+			isa = PBXGroup;
+			children = (
+				1167DED0240A485700E0DDF0 /* PostsViewController.swift */,
+				1167DED1240A485700E0DDF0 /* PostsViewController.xib */,
+				1167DED8240A525900E0DDF0 /* PostsViewModel.swift */,
+				1167DEDA240A526800E0DDF0 /* PostsRouter.swift */,
+			);
+			path = Posts;
+			sourceTree = "<group>";
+		};
+		118ACE8D2407D041002987EE /* Topics */ = {
+			isa = PBXGroup;
+			children = (
+				118ACE8E2407D068002987EE /* TopicsViewController.swift */,
+				118ACE8F2407D068002987EE /* TopicsViewController.xib */,
+				1167DED4240A49E600E0DDF0 /* TopicsViewModel.swift */,
+				1167DED6240A4A0200E0DDF0 /* TopicsRouter.swift */,
+			);
+			path = Topics;
 			sourceTree = "<group>";
 		};
 		1195AD722357EE550056E58F /* Fonts */ = {
@@ -218,6 +256,8 @@
 		742A18B022DE5420004C544D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1167DECF240A482D00E0DDF0 /* Posts */,
+				118ACE8D2407D041002987EE /* Topics */,
 				115D78D824067E27003609F2 /* PantallaInicial */,
 			);
 			path = Views;
@@ -339,6 +379,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1167DED3240A485700E0DDF0 /* PostsViewController.xib in Resources */,
+				118ACE912407D068002987EE /* TopicsViewController.xib in Resources */,
 				742A18A422DE530B004C544D /* LaunchScreen.storyboard in Resources */,
 				115D78DC24067E6C003609F2 /* PantallaInicialViewController.xib in Resources */,
 				1195AD762357EE720056E58F /* SFProDisplay-UltraLight.ttf in Resources */,
@@ -397,9 +439,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1167DED7240A4A0200E0DDF0 /* TopicsRouter.swift in Sources */,
+				1167DED2240A485700E0DDF0 /* PostsViewController.swift in Sources */,
+				1167DEDB240A526800E0DDF0 /* PostsRouter.swift in Sources */,
 				742A189A22DE5309004C544D /* AppDelegate.swift in Sources */,
 				742A18BC22DE581F004C544D /* APIRequest.swift in Sources */,
 				742A18BE22DE620C004C544D /* APIClient.swift in Sources */,
+				1167DED9240A525900E0DDF0 /* PostsViewModel.swift in Sources */,
+				1167DED5240A49E600E0DDF0 /* TopicsViewModel.swift in Sources */,
+				118ACE902407D068002987EE /* TopicsViewController.swift in Sources */,
 				115D78DB24067E6C003609F2 /* PantallaInicialViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
