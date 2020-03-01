@@ -20,6 +20,9 @@
 		1195AD762357EE720056E58F /* SFProDisplay-UltraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1195AD732357EE710056E58F /* SFProDisplay-UltraLight.ttf */; };
 		1195AD772357EE720056E58F /* SFProDisplay-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1195AD742357EE720056E58F /* SFProDisplay-Black.ttf */; };
 		1195AD782357EE720056E58F /* SFProDisplay-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1195AD752357EE720056E58F /* SFProDisplay-Bold.ttf */; };
+		119F81A9240BCB310035FA18 /* TopicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119F81A7240BCB310035FA18 /* TopicCell.swift */; };
+		119F81AA240BCB310035FA18 /* TopicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 119F81A8240BCB310035FA18 /* TopicCell.xib */; };
+		119F81AC240BCD2A0035FA18 /* Topics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119F81AB240BCD2A0035FA18 /* Topics.swift */; };
 		742A189A22DE5309004C544D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742A189922DE5309004C544D /* AppDelegate.swift */; };
 		742A18A122DE530B004C544D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 742A18A022DE530B004C544D /* Assets.xcassets */; };
 		742A18A422DE530B004C544D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 742A18A222DE530B004C544D /* LaunchScreen.storyboard */; };
@@ -42,6 +45,9 @@
 		1195AD732357EE710056E58F /* SFProDisplay-UltraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-UltraLight.ttf"; sourceTree = "<group>"; };
 		1195AD742357EE720056E58F /* SFProDisplay-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Black.ttf"; sourceTree = "<group>"; };
 		1195AD752357EE720056E58F /* SFProDisplay-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Bold.ttf"; sourceTree = "<group>"; };
+		119F81A7240BCB310035FA18 /* TopicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicCell.swift; sourceTree = "<group>"; };
+		119F81A8240BCB310035FA18 /* TopicCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopicCell.xib; sourceTree = "<group>"; };
+		119F81AB240BCD2A0035FA18 /* Topics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topics.swift; sourceTree = "<group>"; };
 		24F2F79E53B60DBDD866CC1A /* Pods_Eh_Ho.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Eh_Ho.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		742A189622DE5309004C544D /* Eh-Ho.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Eh-Ho.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		742A189922DE5309004C544D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +127,7 @@
 		118ACE8D2407D041002987EE /* Topics */ = {
 			isa = PBXGroup;
 			children = (
+				119F81A2240BC92B0035FA18 /* Cell */,
 				118ACE8E2407D068002987EE /* TopicsViewController.swift */,
 				118ACE8F2407D068002987EE /* TopicsViewController.xib */,
 				1167DED4240A49E600E0DDF0 /* TopicsViewModel.swift */,
@@ -137,6 +144,15 @@
 				1195AD732357EE710056E58F /* SFProDisplay-UltraLight.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		119F81A2240BC92B0035FA18 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				119F81A7240BCB310035FA18 /* TopicCell.swift */,
+				119F81A8240BCB310035FA18 /* TopicCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		11BA519123314BA5007A137B /* DataManager */ = {
@@ -300,6 +316,7 @@
 		742A18CB22DE74A5004C544D /* Responses */ = {
 			isa = PBXGroup;
 			children = (
+				119F81AB240BCD2A0035FA18 /* Topics.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -384,6 +401,7 @@
 				742A18A422DE530B004C544D /* LaunchScreen.storyboard in Resources */,
 				115D78DC24067E6C003609F2 /* PantallaInicialViewController.xib in Resources */,
 				1195AD762357EE720056E58F /* SFProDisplay-UltraLight.ttf in Resources */,
+				119F81AA240BCB310035FA18 /* TopicCell.xib in Resources */,
 				742A18A122DE530B004C544D /* Assets.xcassets in Resources */,
 				1195AD772357EE720056E58F /* SFProDisplay-Black.ttf in Resources */,
 				1195AD782357EE720056E58F /* SFProDisplay-Bold.ttf in Resources */,
@@ -440,6 +458,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1167DED7240A4A0200E0DDF0 /* TopicsRouter.swift in Sources */,
+				119F81A9240BCB310035FA18 /* TopicCell.swift in Sources */,
 				1167DED2240A485700E0DDF0 /* PostsViewController.swift in Sources */,
 				1167DEDB240A526800E0DDF0 /* PostsRouter.swift in Sources */,
 				742A189A22DE5309004C544D /* AppDelegate.swift in Sources */,
@@ -447,6 +466,7 @@
 				742A18BE22DE620C004C544D /* APIClient.swift in Sources */,
 				1167DED9240A525900E0DDF0 /* PostsViewModel.swift in Sources */,
 				1167DED5240A49E600E0DDF0 /* TopicsViewModel.swift in Sources */,
+				119F81AC240BCD2A0035FA18 /* Topics.swift in Sources */,
 				118ACE902407D068002987EE /* TopicsViewController.swift in Sources */,
 				115D78DB24067E6C003609F2 /* PantallaInicialViewController.swift in Sources */,
 			);

@@ -10,8 +10,15 @@ import UIKit
 
 class TopicsViewController: UIViewController {
     
-    let viewModel : TopicsViewModel
+    //MARK: - Outlets
+    @IBOutlet weak var table: UITableView!
     
+    //MARK: - Propierties
+    let viewModel : TopicsViewModel
+    var topics : [Topic] = []
+    
+    
+    //MARK: - Inits
     init(viewModel: TopicsViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -21,14 +28,59 @@ class TopicsViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
+    //MARK: - Cycle life
     override func viewDidLoad() {
         super.viewDidLoad()
+        table.delegate = self
+        table.dataSource = self
+        
+        let cell = UINib(nibName: "TopicCell", bundle: nil)
+        table.register(cell, forCellReuseIdentifier: "TopicCell")
     }
-
+    
+    
+    @IBAction func buttonSearch(_ sender: Any) {
+        print("botón de lupa pulsada")
+    }
+    
+    @IBAction func buttonAddTopic(_ sender: Any) {
+        print("botón de añadir topic nuevo pulsado")
+    }
 }
 
-// Comunicacion con ViewModel
 
+//MARK: - Extensions
+extension TopicsViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return topics.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        guard let cell = table.dequeueReusableCell(withIdentifier: "TopicCell", for: indexPath)
+            as? TopicCell else {
+                return UITableViewCell()
+        }
+        
+        let title = topics[indexPath.row].title
+        let numVisitas = topics[indexPath.row].views
+        let numComents = topics[indexPath.row].postsCount
+        let dateTopic = topics[indexPath.row].createdAt!
+        
+        cell.configure(title: title, numVisitas: "\(numVisitas)", numComents: "\(numComents)", dateTopic: "\(dateTopic)")
+        
+        return cell
+    }
+    
+    
+}
+
+extension TopicsViewController: UITableViewDelegate {
+    
+}
+
+//MARK: - ViewModel Comunication
 protocol TopicsViewControllerProtocol: class {
     
 }
