@@ -51,8 +51,8 @@ class PantallaInicialViewController: UIViewController {
                 //TODO: - Acceder a un ViewController en concreto.
                 print("Ahora debería de ir a una vista que yo decida....")
                 let vc = TopicsRouter.configureModule()
-                let navVc = UINavigationController(rootViewController: vc)
-                self.present(navVc, animated: true, completion: nil)
+                //let navVc = UINavigationController(rootViewController: vc)
+                self.present(vc, animated: true, completion: nil)
                 
             }
         }

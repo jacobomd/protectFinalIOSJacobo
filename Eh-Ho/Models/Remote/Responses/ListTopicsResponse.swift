@@ -24,7 +24,7 @@ import Foundation
 import Foundation
 
 // MARK: - Welcome
-struct ListTopicsByCategoryResponse: Codable {
+struct ListTopicsResponse: Codable {
     let users: [User]
     let topicList: TopicList
     

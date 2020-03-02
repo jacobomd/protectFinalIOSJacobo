@@ -37,6 +37,8 @@ class TopicsViewController: UIViewController {
         
         let cell = UINib(nibName: "TopicCell", bundle: nil)
         table.register(cell, forCellReuseIdentifier: "TopicCell")
+        
+        viewModel.viewDidLoad()
     }
     
     
@@ -82,9 +84,18 @@ extension TopicsViewController: UITableViewDelegate {
 
 //MARK: - ViewModel Comunication
 protocol TopicsViewControllerProtocol: class {
-    
+    func showListTopics (topics: [Topic])
+    func showError (message: String)
 }
 
 extension TopicsViewController: TopicsViewControllerProtocol {
     
+    func showListTopics(topics: [Topic]) {
+        self.topics = topics
+        table.reloadData()
+    }
+   
+    func showError(message: String) {
+        print("Errorrrrr")
+    }
 }

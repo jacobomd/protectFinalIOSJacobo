@@ -10,12 +10,36 @@ import Foundation
 
 class TopicsViewModel {
     
+    //MARK: - Propierties
     weak var view : TopicsViewControllerProtocol?
-    
     let router : TopicsRouter
+    let topicRepository: TopicsRepository
     
-    init(router: TopicsRouter) {
+    //MARK: - Inits
+    init(router: TopicsRouter, topicRepository: TopicsRepository) {
         self.router = router
+        self.topicRepository = topicRepository
+    }
+    
+    //MARK: - Cycle life
+    func viewDidLoad () {
+        fetchListTopics()
+    }
+    
+    //MARK: - Private functions
+    private func fetchListTopics () {
+        
+        topicRepository.getListTopic { [weak self] (result) in
+            switch result {
+            case .success(let value):
+                // successss
+                self?.view?.showListTopics(topics: value.topicList.topics)
+            case .failure(let error):
+                // error
+                self?.view?.showError(message: error.localizedDescription)
+            }
+        }
+        
     }
     
 }

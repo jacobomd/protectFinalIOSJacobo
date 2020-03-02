@@ -32,13 +32,13 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Topics" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OJR-yA-vpI">
-                    <rect key="frame" x="10" y="81" width="100.5" height="41"/>
-                    <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="34"/>
-                    <nil key="textColor"/>
+                    <rect key="frame" x="10" y="54" width="94.5" height="38.5"/>
+                    <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="32"/>
+                    <color key="textColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qvu-xq-LOG">
-                    <rect key="frame" x="0.0" y="132" width="414" height="764"/>
+                    <rect key="frame" x="0.0" y="102.5" width="414" height="793.5"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0CB-eK-LOT" userLabel="ButtonNewTopic">
@@ -58,7 +58,7 @@
                 <constraint firstItem="qvu-xq-LOG" firstAttribute="top" secondItem="OJR-yA-vpI" secondAttribute="bottom" constant="10" id="UPj-1R-tOi"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="rit-ja-Fed" secondAttribute="trailing" constant="20" id="lCe-fd-63w"/>
                 <constraint firstAttribute="bottom" secondItem="qvu-xq-LOG" secondAttribute="bottom" id="lZf-7f-ufB"/>
-                <constraint firstItem="OJR-yA-vpI" firstAttribute="top" secondItem="rit-ja-Fed" secondAttribute="bottom" constant="5" id="mFk-LB-ya6"/>
+                <constraint firstItem="OJR-yA-vpI" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="mFk-LB-ya6"/>
                 <constraint firstItem="qvu-xq-LOG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="pvX-D4-Znr"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="OJR-yA-vpI" secondAttribute="trailing" constant="10" id="rg8-Zf-kDG"/>
                 <constraint firstItem="qvu-xq-LOG" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="zPD-gD-P5t"/>
