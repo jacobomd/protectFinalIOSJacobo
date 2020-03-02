@@ -40,7 +40,7 @@ class TopicsViewController: UIViewController {
         
         viewModel.viewDidLoad()
     }
-    
+
     
     @IBAction func buttonSearch(_ sender: Any) {
         print("botón de lupa pulsada")
@@ -49,6 +49,14 @@ class TopicsViewController: UIViewController {
     @IBAction func buttonAddTopic(_ sender: Any) {
         print("botón de añadir topic nuevo pulsado")
     }
+    
+    
+    @IBAction func buttonLogin(_ sender: Any) {
+        let vc = UserSignUpViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+        print("pulsadoooooooo")
+    }
+    
 }
 
 

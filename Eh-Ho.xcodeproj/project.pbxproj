@@ -26,6 +26,10 @@
 		11B17300240D02DC00CCE753 /* TopicsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B172FF240D02DC00CCE753 /* TopicsRepository.swift */; };
 		11B17302240D03E600CCE753 /* TopicsRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B17301240D03E600CCE753 /* TopicsRepositoryImpl.swift */; };
 		11B17304240D04E700CCE753 /* ListTopicRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B17303240D04E700CCE753 /* ListTopicRequest.swift */; };
+		11B17316240D6B3C00CCE753 /* UserSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B17314240D6B3C00CCE753 /* UserSignUpViewController.swift */; };
+		11B17317240D6B3C00CCE753 /* UserSignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11B17315240D6B3C00CCE753 /* UserSignUpViewController.xib */; };
+		11B1731A240D6DF300CCE753 /* UserSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B17318240D6DF300CCE753 /* UserSignInViewController.swift */; };
+		11B1731B240D6DF300CCE753 /* UserSignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11B17319240D6DF300CCE753 /* UserSignInViewController.xib */; };
 		742A189A22DE5309004C544D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742A189922DE5309004C544D /* AppDelegate.swift */; };
 		742A18A122DE530B004C544D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 742A18A022DE530B004C544D /* Assets.xcassets */; };
 		742A18A422DE530B004C544D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 742A18A222DE530B004C544D /* LaunchScreen.storyboard */; };
@@ -54,6 +58,10 @@
 		11B172FF240D02DC00CCE753 /* TopicsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsRepository.swift; sourceTree = "<group>"; };
 		11B17301240D03E600CCE753 /* TopicsRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsRepositoryImpl.swift; sourceTree = "<group>"; };
 		11B17303240D04E700CCE753 /* ListTopicRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTopicRequest.swift; sourceTree = "<group>"; };
+		11B17314240D6B3C00CCE753 /* UserSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignUpViewController.swift; sourceTree = "<group>"; };
+		11B17315240D6B3C00CCE753 /* UserSignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserSignUpViewController.xib; sourceTree = "<group>"; };
+		11B17318240D6DF300CCE753 /* UserSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignInViewController.swift; sourceTree = "<group>"; };
+		11B17319240D6DF300CCE753 /* UserSignInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserSignInViewController.xib; sourceTree = "<group>"; };
 		24F2F79E53B60DBDD866CC1A /* Pods_Eh_Ho.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Eh_Ho.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		742A189622DE5309004C544D /* Eh-Ho.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Eh-Ho.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		742A189922DE5309004C544D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -160,6 +168,33 @@
 				119F81A8240BCB310035FA18 /* TopicCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		11B17305240D1EEA00CCE753 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				11B17313240D6B1D00CCE753 /* UserSignIn */,
+				11B17312240D6B0D00CCE753 /* UserSignUp */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		11B17312240D6B0D00CCE753 /* UserSignUp */ = {
+			isa = PBXGroup;
+			children = (
+				11B17314240D6B3C00CCE753 /* UserSignUpViewController.swift */,
+				11B17315240D6B3C00CCE753 /* UserSignUpViewController.xib */,
+			);
+			path = UserSignUp;
+			sourceTree = "<group>";
+		};
+		11B17313240D6B1D00CCE753 /* UserSignIn */ = {
+			isa = PBXGroup;
+			children = (
+				11B17318240D6DF300CCE753 /* UserSignInViewController.swift */,
+				11B17319240D6DF300CCE753 /* UserSignInViewController.xib */,
+			);
+			path = UserSignIn;
 			sourceTree = "<group>";
 		};
 		11BA519123314BA5007A137B /* DataManager */ = {
@@ -279,6 +314,7 @@
 		742A18B022DE5420004C544D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				11B17305240D1EEA00CCE753 /* User */,
 				1167DECF240A482D00E0DDF0 /* Posts */,
 				118ACE8D2407D041002987EE /* Topics */,
 				115D78D824067E27003609F2 /* PantallaInicial */,
@@ -408,10 +444,12 @@
 				1167DED3240A485700E0DDF0 /* PostsViewController.xib in Resources */,
 				118ACE912407D068002987EE /* TopicsViewController.xib in Resources */,
 				742A18A422DE530B004C544D /* LaunchScreen.storyboard in Resources */,
+				11B1731B240D6DF300CCE753 /* UserSignInViewController.xib in Resources */,
 				115D78DC24067E6C003609F2 /* PantallaInicialViewController.xib in Resources */,
 				1195AD762357EE720056E58F /* SFProDisplay-UltraLight.ttf in Resources */,
 				119F81AA240BCB310035FA18 /* TopicCell.xib in Resources */,
 				742A18A122DE530B004C544D /* Assets.xcassets in Resources */,
+				11B17317240D6B3C00CCE753 /* UserSignUpViewController.xib in Resources */,
 				1195AD772357EE720056E58F /* SFProDisplay-Black.ttf in Resources */,
 				1195AD782357EE720056E58F /* SFProDisplay-Bold.ttf in Resources */,
 			);
@@ -467,11 +505,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				11B17300240D02DC00CCE753 /* TopicsRepository.swift in Sources */,
+				11B17316240D6B3C00CCE753 /* UserSignUpViewController.swift in Sources */,
 				1167DED7240A4A0200E0DDF0 /* TopicsRouter.swift in Sources */,
 				119F81A9240BCB310035FA18 /* TopicCell.swift in Sources */,
 				1167DED2240A485700E0DDF0 /* PostsViewController.swift in Sources */,
 				1167DEDB240A526800E0DDF0 /* PostsRouter.swift in Sources */,
 				742A189A22DE5309004C544D /* AppDelegate.swift in Sources */,
+				11B1731A240D6DF300CCE753 /* UserSignInViewController.swift in Sources */,
 				11B17304240D04E700CCE753 /* ListTopicRequest.swift in Sources */,
 				742A18BC22DE581F004C544D /* APIRequest.swift in Sources */,
 				742A18BE22DE620C004C544D /* APIClient.swift in Sources */,

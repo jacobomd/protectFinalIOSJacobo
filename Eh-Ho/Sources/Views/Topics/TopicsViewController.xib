@@ -25,7 +25,11 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rit-ja-Fed" userLabel="ButtonSearch">
-                    <rect key="frame" x="376" y="54" width="18" height="22"/>
+                    <rect key="frame" x="370" y="54" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="mDt-Pf-Z6Q"/>
+                        <constraint firstAttribute="width" constant="24" id="tPm-Ba-vSy"/>
+                    </constraints>
                     <state key="normal" image="temas_Search"/>
                     <connections>
                         <action selector="buttonSearch:" destination="-1" eventType="touchUpInside" id="Mfs-da-5VG"/>
@@ -48,6 +52,17 @@
                         <action selector="buttonAddTopic:" destination="-1" eventType="touchUpInside" id="hs7-fY-FyY"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zWw-0U-3xn" userLabel="ButtonLogin">
+                    <rect key="frame" x="314" y="54" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="24" id="Jew-Vd-7kx"/>
+                        <constraint firstAttribute="height" constant="24" id="LSx-nS-CKZ"/>
+                    </constraints>
+                    <state key="normal" image="tabBar_usuarioOn"/>
+                    <connections>
+                        <action selector="buttonLogin:" destination="-1" eventType="touchUpInside" id="hC6-id-ZgN"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -56,6 +71,8 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="0CB-eK-LOT" secondAttribute="bottom" constant="50" id="Et4-95-3Ap"/>
                 <constraint firstItem="rit-ja-Fed" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="Jhw-4T-ja5"/>
                 <constraint firstItem="qvu-xq-LOG" firstAttribute="top" secondItem="OJR-yA-vpI" secondAttribute="bottom" constant="10" id="UPj-1R-tOi"/>
+                <constraint firstItem="rit-ja-Fed" firstAttribute="leading" secondItem="zWw-0U-3xn" secondAttribute="trailing" constant="32" id="UxS-3p-S5k"/>
+                <constraint firstItem="zWw-0U-3xn" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="fiz-en-uHs"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="rit-ja-Fed" secondAttribute="trailing" constant="20" id="lCe-fd-63w"/>
                 <constraint firstAttribute="bottom" secondItem="qvu-xq-LOG" secondAttribute="bottom" id="lZf-7f-ufB"/>
                 <constraint firstItem="OJR-yA-vpI" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="mFk-LB-ya6"/>
@@ -64,10 +81,11 @@
                 <constraint firstItem="qvu-xq-LOG" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="zPD-gD-P5t"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="132" y="131"/>
+            <point key="canvasLocation" x="131.8840579710145" y="130.58035714285714"/>
         </view>
     </objects>
     <resources>
+        <image name="tabBar_usuarioOn" width="26" height="26"/>
         <image name="temas_ButtonAdd" width="64" height="64"/>
         <image name="temas_Search" width="18" height="18"/>
     </resources>
