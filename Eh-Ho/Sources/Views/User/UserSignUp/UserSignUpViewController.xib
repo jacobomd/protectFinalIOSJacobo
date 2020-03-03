@@ -10,6 +10,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UserSignUpViewController" customModule="Eh_Ho" customModuleProvider="target">
             <connections>
+                <outlet property="txtEmail" destination="221-eO-KMC" id="dKT-h5-CRi"/>
+                <outlet property="txtName" destination="rC2-QN-Q5S" id="EnB-Wd-k8r"/>
+                <outlet property="txtPassw" destination="Ulj-BG-hxm" id="D8X-9C-XOw"/>
+                <outlet property="txtUserName" destination="XCR-vp-iJv" id="I11-h9-YQD"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -53,6 +57,9 @@
                             <state key="normal" title="SIGNUP">
                                 <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
+                            <connections>
+                                <action selector="butSignUp:" destination="-1" eventType="touchUpInside" id="iaE-oo-kKk"/>
+                            </connections>
                         </button>
                     </subviews>
                     <constraints>

@@ -17,20 +17,29 @@ final class SessionAPI {
         return session
     }()
     
-    func send<T: APIRequest>(request: T, completion: @escaping(Result<T.Response, Error>) -> ()) {
+    func send<T: APIRequest>(request: T, completion: @escaping(Result<T.Response, ApiErrorResponse>) -> ()) {
         let request = request.requestWithBaseUrl()
         
         let task = session.dataTask(with: request) { data, response, error in
             do {
                 if let data = data {
+                    let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+                    if let _ = json?["errors"] {
+                        let apiError = try JSONDecoder().decode(ApiErrorResponse.self, from: data)
+                        DispatchQueue.main.async {
+                            completion(.failure(apiError))
+                        }
+                    }
                     let model = try JSONDecoder().decode(T.Response.self, from: data)
                     DispatchQueue.main.async {
                         completion(.success(model))
-                        
                     }
                 }
             } catch let error {
-                print( error.localizedDescription)
+                DispatchQueue.main.async {
+                    let apiError = ApiErrorResponse(errors: [error.localizedDescription], action: "An error ocurred, try again later!")
+                    completion(.failure(apiError))
+                }
             }
         }
         task.resume()

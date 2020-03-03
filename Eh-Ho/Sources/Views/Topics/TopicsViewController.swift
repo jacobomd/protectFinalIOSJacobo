@@ -79,7 +79,7 @@ class TopicsViewController: UIViewController {
     
     //MARK: - Privates functions
     private func  showViewLogin() {
-        let vc = UserSignUpViewController()
+        let vc = UserSignUpRouter.configureModule()
         navigationController?.pushViewController(vc, animated: true)
     }
 }

@@ -10,6 +10,19 @@ import UIKit
 
 class UserSignInViewController: UIViewController {
     
+    //MARK: - Propierties
+    let viewModel : UserSignInViewModel
+    
+    //MARK: - Inits
+    init(viewModel: UserSignInViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     //MARK: - Cycle life
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,5 +47,15 @@ class UserSignInViewController: UIViewController {
     navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: color, NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Light", size: 24)!]
         
     }
+    
+}
+
+//MARK: - Comunication with ViewModel
+
+protocol UserSignInViewControllerProtocol: class {
+    
+}
+
+extension UserSignInViewController: UserSignInViewControllerProtocol {
     
 }

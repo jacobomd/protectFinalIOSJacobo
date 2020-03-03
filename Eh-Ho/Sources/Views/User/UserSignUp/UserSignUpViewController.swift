@@ -10,6 +10,25 @@ import UIKit
 
 class UserSignUpViewController: UIViewController {
     
+    //MARK: - Outlets
+    @IBOutlet weak var txtEmail: UITextField!
+    @IBOutlet weak var txtName: UITextField!
+    @IBOutlet weak var txtUserName: UITextField!
+    @IBOutlet weak var txtPassw: UITextField!
+    
+    //MARK: - Propierties
+    let viewModel : UserSignUpViewModel
+    
+    //MARK: - Inits
+    init(viewModel : UserSignUpViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     //MARK: - Cycle life
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,8 +36,20 @@ class UserSignUpViewController: UIViewController {
     }
     
     //MARK: - Navigations
+    @IBAction func butSignUp(_ sender: Any) {
+        guard let email = txtEmail.text,
+            let name = txtName.text,
+            let userName = txtUserName.text,
+            let password = txtPassw.text else {
+            //TODO: - Aqui se podría poner un alert!
+            return
+        }
+        
+        viewModel.didTapInSignUp(email: email, name: name, userName: userName, password: password)
+    }
+    
     @IBAction func butGotoSignIn(_ sender: Any) {
-        let vc = UserSignInViewController ()
+        let vc = UserSignInRouter.configureModule()
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -35,4 +66,34 @@ class UserSignUpViewController: UIViewController {
     navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: color, NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Light", size: 24)!]
         
     }
+        
 }
+
+//MARK: - Comunications with ViewModel
+protocol UserSignUpViewControllerProtocol: class {
+    func showUserCreated()
+    func showErrorUserCreated(message: String)
+}
+
+extension UserSignUpViewController: UserSignUpViewControllerProtocol {
+ 
+    func showUserCreated() {
+        showUserCreatedAlert(message: "Registro creado correctamente")
+    }
+    
+    func showErrorUserCreated(message: String) {
+         showUserCreatedAlert(message: message)
+     }
+    
+    private func showUserCreatedAlert (message: String) {
+        
+        let alert = UIAlertController(title: message, message: nil, preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: "ok", style: .default, handler: nil)
+        
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+}
+

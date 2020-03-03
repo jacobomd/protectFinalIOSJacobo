@@ -9,5 +9,5 @@
 import Foundation
 
 protocol TopicsRepository {
-    func getListTopic(completion: @escaping(Result<ListTopicsResponse, Error>) -> ())
+    func getListTopic(completion: @escaping(Result<ListTopicsResponse, ApiErrorResponse>) -> ())
 }

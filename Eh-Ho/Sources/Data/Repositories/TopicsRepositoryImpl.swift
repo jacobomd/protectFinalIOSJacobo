@@ -16,7 +16,7 @@ class TopicsRepositoryImpl: TopicsRepository {
         self.session = session
     }
     
-    func getListTopic(completion: @escaping (Result<ListTopicsResponse, Error>) -> ()) {
+    func getListTopic(completion: @escaping (Result<ListTopicsResponse, ApiErrorResponse>) -> ()) {
            let request = ListTopicRequest()
         
         session.send(request: request) { (result) in

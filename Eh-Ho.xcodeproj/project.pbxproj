@@ -30,6 +30,15 @@
 		11B17317240D6B3C00CCE753 /* UserSignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11B17315240D6B3C00CCE753 /* UserSignUpViewController.xib */; };
 		11B1731A240D6DF300CCE753 /* UserSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B17318240D6DF300CCE753 /* UserSignInViewController.swift */; };
 		11B1731B240D6DF300CCE753 /* UserSignInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11B17319240D6DF300CCE753 /* UserSignInViewController.xib */; };
+		11B1731D240E6EA000CCE753 /* UserSignInRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B1731C240E6EA000CCE753 /* UserSignInRouter.swift */; };
+		11B1731F240E6EB900CCE753 /* UserSignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B1731E240E6EB900CCE753 /* UserSignInViewModel.swift */; };
+		11B17321240E6ECF00CCE753 /* UserSignUpRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B17320240E6ECF00CCE753 /* UserSignUpRouter.swift */; };
+		11B17323240E6EE800CCE753 /* UserSignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B17322240E6EE800CCE753 /* UserSignUpViewModel.swift */; };
+		11B17325240E853600CCE753 /* LoginSignUpRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B17324240E853600CCE753 /* LoginSignUpRepository.swift */; };
+		11B17327240E855E00CCE753 /* LoginSignUpRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B17326240E855E00CCE753 /* LoginSignUpRepositoryImpl.swift */; };
+		11B17329240E86C300CCE753 /* UserSignUpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B17328240E86C300CCE753 /* UserSignUpResponse.swift */; };
+		11B1732B240E88A700CCE753 /* UserSignUpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B1732A240E88A700CCE753 /* UserSignUpRequest.swift */; };
+		11B1732D240EC07900CCE753 /* ApiErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B1732C240EC07900CCE753 /* ApiErrorResponse.swift */; };
 		742A189A22DE5309004C544D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742A189922DE5309004C544D /* AppDelegate.swift */; };
 		742A18A122DE530B004C544D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 742A18A022DE530B004C544D /* Assets.xcassets */; };
 		742A18A422DE530B004C544D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 742A18A222DE530B004C544D /* LaunchScreen.storyboard */; };
@@ -62,6 +71,15 @@
 		11B17315240D6B3C00CCE753 /* UserSignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserSignUpViewController.xib; sourceTree = "<group>"; };
 		11B17318240D6DF300CCE753 /* UserSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignInViewController.swift; sourceTree = "<group>"; };
 		11B17319240D6DF300CCE753 /* UserSignInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserSignInViewController.xib; sourceTree = "<group>"; };
+		11B1731C240E6EA000CCE753 /* UserSignInRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignInRouter.swift; sourceTree = "<group>"; };
+		11B1731E240E6EB900CCE753 /* UserSignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignInViewModel.swift; sourceTree = "<group>"; };
+		11B17320240E6ECF00CCE753 /* UserSignUpRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignUpRouter.swift; sourceTree = "<group>"; };
+		11B17322240E6EE800CCE753 /* UserSignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignUpViewModel.swift; sourceTree = "<group>"; };
+		11B17324240E853600CCE753 /* LoginSignUpRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSignUpRepository.swift; sourceTree = "<group>"; };
+		11B17326240E855E00CCE753 /* LoginSignUpRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSignUpRepositoryImpl.swift; sourceTree = "<group>"; };
+		11B17328240E86C300CCE753 /* UserSignUpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignUpResponse.swift; sourceTree = "<group>"; };
+		11B1732A240E88A700CCE753 /* UserSignUpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignUpRequest.swift; sourceTree = "<group>"; };
+		11B1732C240EC07900CCE753 /* ApiErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiErrorResponse.swift; sourceTree = "<group>"; };
 		24F2F79E53B60DBDD866CC1A /* Pods_Eh_Ho.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Eh_Ho.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		742A189622DE5309004C544D /* Eh-Ho.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Eh-Ho.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		742A189922DE5309004C544D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				11B17303240D04E700CCE753 /* ListTopicRequest.swift */,
+				11B1732A240E88A700CCE753 /* UserSignUpRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -184,6 +203,8 @@
 			children = (
 				11B17314240D6B3C00CCE753 /* UserSignUpViewController.swift */,
 				11B17315240D6B3C00CCE753 /* UserSignUpViewController.xib */,
+				11B17320240E6ECF00CCE753 /* UserSignUpRouter.swift */,
+				11B17322240E6EE800CCE753 /* UserSignUpViewModel.swift */,
 			);
 			path = UserSignUp;
 			sourceTree = "<group>";
@@ -193,6 +214,8 @@
 			children = (
 				11B17318240D6DF300CCE753 /* UserSignInViewController.swift */,
 				11B17319240D6DF300CCE753 /* UserSignInViewController.xib */,
+				11B1731C240E6EA000CCE753 /* UserSignInRouter.swift */,
+				11B1731E240E6EB900CCE753 /* UserSignInViewModel.swift */,
 			);
 			path = UserSignIn;
 			sourceTree = "<group>";
@@ -354,6 +377,8 @@
 			children = (
 				11B172FF240D02DC00CCE753 /* TopicsRepository.swift */,
 				11B17301240D03E600CCE753 /* TopicsRepositoryImpl.swift */,
+				11B17324240E853600CCE753 /* LoginSignUpRepository.swift */,
+				11B17326240E855E00CCE753 /* LoginSignUpRepositoryImpl.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -362,6 +387,8 @@
 			isa = PBXGroup;
 			children = (
 				119F81AB240BCD2A0035FA18 /* ListTopicsResponse.swift */,
+				11B17328240E86C300CCE753 /* UserSignUpResponse.swift */,
+				11B1732C240EC07900CCE753 /* ApiErrorResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -507,20 +534,29 @@
 				11B17300240D02DC00CCE753 /* TopicsRepository.swift in Sources */,
 				11B17316240D6B3C00CCE753 /* UserSignUpViewController.swift in Sources */,
 				1167DED7240A4A0200E0DDF0 /* TopicsRouter.swift in Sources */,
+				11B17323240E6EE800CCE753 /* UserSignUpViewModel.swift in Sources */,
+				11B1732D240EC07900CCE753 /* ApiErrorResponse.swift in Sources */,
 				119F81A9240BCB310035FA18 /* TopicCell.swift in Sources */,
 				1167DED2240A485700E0DDF0 /* PostsViewController.swift in Sources */,
+				11B1731F240E6EB900CCE753 /* UserSignInViewModel.swift in Sources */,
 				1167DEDB240A526800E0DDF0 /* PostsRouter.swift in Sources */,
+				11B17321240E6ECF00CCE753 /* UserSignUpRouter.swift in Sources */,
+				11B17325240E853600CCE753 /* LoginSignUpRepository.swift in Sources */,
+				11B1732B240E88A700CCE753 /* UserSignUpRequest.swift in Sources */,
 				742A189A22DE5309004C544D /* AppDelegate.swift in Sources */,
 				11B1731A240D6DF300CCE753 /* UserSignInViewController.swift in Sources */,
 				11B17304240D04E700CCE753 /* ListTopicRequest.swift in Sources */,
 				742A18BC22DE581F004C544D /* APIRequest.swift in Sources */,
+				11B17327240E855E00CCE753 /* LoginSignUpRepositoryImpl.swift in Sources */,
 				742A18BE22DE620C004C544D /* APIClient.swift in Sources */,
+				11B1731D240E6EA000CCE753 /* UserSignInRouter.swift in Sources */,
 				1167DED9240A525900E0DDF0 /* PostsViewModel.swift in Sources */,
 				11B17302240D03E600CCE753 /* TopicsRepositoryImpl.swift in Sources */,
 				1167DED5240A49E600E0DDF0 /* TopicsViewModel.swift in Sources */,
 				119F81AC240BCD2A0035FA18 /* ListTopicsResponse.swift in Sources */,
 				118ACE902407D068002987EE /* TopicsViewController.swift in Sources */,
 				115D78DB24067E6C003609F2 /* PantallaInicialViewController.swift in Sources */,
+				11B17329240E86C300CCE753 /* UserSignUpResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
