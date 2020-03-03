@@ -34,29 +34,54 @@ class TopicsViewController: UIViewController {
         super.viewDidLoad()
         table.delegate = self
         table.dataSource = self
-        
+        setupUI()
         let cell = UINib(nibName: "TopicCell", bundle: nil)
         table.register(cell, forCellReuseIdentifier: "TopicCell")
-        
         viewModel.viewDidLoad()
     }
-
     
-    @IBAction func buttonSearch(_ sender: Any) {
-        print("botón de lupa pulsada")
+    //MARK: - UI
+    func setupUI() {
+        
+        self.title = "Topics"
+        let backItem = UIBarButtonItem()
+        backItem.title = "topics"
+        let color = UIColor(red: 291/255, green: 99/255, blue: 0/255, alpha: 1.0)
+        backItem.tintColor = color
+        navigationItem.backBarButtonItem = backItem
+        
+        let searchTopic = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(displaySearch))
+        searchTopic.tintColor = color
+        searchTopic.image = UIImage(named: "temas_Search")
+        
+        let userLogin = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(displayLogin))
+        userLogin.tintColor = color
+        userLogin.image = UIImage(named: "tabBar_usuarioOn")
+        
+        navigationItem.rightBarButtonItems = [searchTopic, userLogin]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: color, NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Light", size: 24)!]
+        
     }
     
+    //MARK: - Navigations
+
     @IBAction func buttonAddTopic(_ sender: Any) {
         print("botón de añadir topic nuevo pulsado")
     }
     
-    
-    @IBAction func buttonLogin(_ sender: Any) {
-        let vc = UserSignUpViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
-        print("pulsadoooooooo")
+    @objc func displayLogin () {
+        showViewLogin()
     }
     
+    @objc func displaySearch () {
+        print("lupa pulsadaaaaaaaaaa")
+    }
+    
+    //MARK: - Privates functions
+    private func  showViewLogin() {
+        let vc = UserSignUpViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 

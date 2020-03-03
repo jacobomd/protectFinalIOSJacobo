@@ -25,11 +25,11 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_Rectangulo" translatesAutoresizingMaskIntoConstraints="NO" id="ooP-4j-zBU">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <viewLayoutGuide key="safeArea" id="vBy-up-lnq"/>
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_Triangulo" translatesAutoresizingMaskIntoConstraints="NO" id="fx8-NT-71g">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                     <viewLayoutGuide key="safeArea" id="Ykf-yp-1Ib"/>
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="w6o-CB-NZM">
@@ -42,16 +42,16 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ooP-4j-zBU" secondAttribute="bottom" id="5Zr-ZB-hwt"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ooP-4j-zBU" secondAttribute="trailing" id="Bxc-UL-naG"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="fx8-NT-71g" secondAttribute="trailing" id="U8V-fh-T0l"/>
-                <constraint firstItem="ooP-4j-zBU" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Vrh-QC-jrK"/>
+                <constraint firstAttribute="bottom" secondItem="ooP-4j-zBU" secondAttribute="bottom" id="5Zr-ZB-hwt"/>
+                <constraint firstAttribute="trailing" secondItem="ooP-4j-zBU" secondAttribute="trailing" id="Bxc-UL-naG"/>
+                <constraint firstAttribute="trailing" secondItem="fx8-NT-71g" secondAttribute="trailing" id="U8V-fh-T0l"/>
+                <constraint firstItem="ooP-4j-zBU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Vrh-QC-jrK"/>
                 <constraint firstItem="w6o-CB-NZM" firstAttribute="centerX" secondItem="ooP-4j-zBU" secondAttribute="centerX" id="aNe-2J-mlh"/>
-                <constraint firstItem="fx8-NT-71g" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="hOn-3I-bAA"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="fx8-NT-71g" secondAttribute="bottom" id="jRc-6u-iQk"/>
+                <constraint firstItem="fx8-NT-71g" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="hOn-3I-bAA"/>
+                <constraint firstAttribute="bottom" secondItem="fx8-NT-71g" secondAttribute="bottom" constant="34" id="jRc-6u-iQk"/>
                 <constraint firstItem="w6o-CB-NZM" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="nkw-v3-6ry"/>
-                <constraint firstItem="ooP-4j-zBU" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="pjM-PA-9gy"/>
-                <constraint firstItem="fx8-NT-71g" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="xrq-09-eRD"/>
+                <constraint firstItem="ooP-4j-zBU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="pjM-PA-9gy"/>
+                <constraint firstItem="fx8-NT-71g" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="xrq-09-eRD"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="132" y="127"/>
