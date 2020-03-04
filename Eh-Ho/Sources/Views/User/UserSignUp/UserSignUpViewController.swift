@@ -82,18 +82,24 @@ extension UserSignUpViewController: UserSignUpViewControllerProtocol {
     }
     
     func showErrorUserCreated(message: String) {
-         showUserCreatedAlert(message: message)
+         showErrorUserCreatedAlert(message: "Error: \(message)")
      }
     
     private func showUserCreatedAlert (message: String) {
-        
         let alert = UIAlertController(title: message, message: nil, preferredStyle: .alert)
         
-        let action = UIAlertAction(title: "ok", style: .default, handler: nil)
-        
+        let action = UIAlertAction(title: "Ok", style: .default) { _ in
+            self.viewModel.navigateToTopics()
+        }
         alert.addAction(action)
         self.present(alert, animated: true, completion: nil)
-        
+    }
+    
+    private func showErrorUserCreatedAlert (message: String) {
+        let alert = UIAlertController(title: message, message: nil, preferredStyle: .alert)
+        let action = UIAlertAction(title: "ok", style: .default, handler: nil)
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
     }
 }
 

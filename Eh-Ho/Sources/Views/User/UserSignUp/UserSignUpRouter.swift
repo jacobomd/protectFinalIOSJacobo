@@ -10,7 +10,7 @@ import UIKit
 
 class UserSignUpRouter {
     
-    weak var viewController : UserSignUpViewControllerProtocol?
+    weak var viewController : UserSignUpViewController?
     
     static func configureModule () -> UIViewController {
         
@@ -25,5 +25,9 @@ class UserSignUpRouter {
         
         return viewController
         
+    }
+    
+    func navigateToTopicList() {
+        viewController?.navigationController?.popToRootViewController(animated: true)
     }
 }

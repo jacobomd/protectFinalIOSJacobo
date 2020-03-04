@@ -24,6 +24,11 @@ class UserSignUpViewModel {
     //MARK: - Public functions
     func didTapInSignUp(email: String, name: String, userName: String, password: String) {
         createUserAcount(email: email, name: name, userName: userName, password: password)
+        
+    }
+    
+    func navigateToTopics() {
+        router.navigateToTopicList()
     }
     
     //MARK: - Private functions
