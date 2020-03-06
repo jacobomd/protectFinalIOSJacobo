@@ -13,4 +13,6 @@ protocol LoginSignUpRepository {
     func createUserAccount (email: String, name: String, userName: String, password: String,
                             completion: @escaping(Result<UserSignUpResponse, ApiErrorResponse>) -> ())
     
+    func signInUser ( userName: String, password: String, completion: @escaping(Result<UserSignInResponse, ApiErrorResponse>) -> ())
+    
 }

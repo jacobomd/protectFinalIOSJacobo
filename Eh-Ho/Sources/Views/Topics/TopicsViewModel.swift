@@ -15,6 +15,7 @@ class TopicsViewModel {
     let router : TopicsRouter
     let topicRepository: TopicsRepository
     
+    
     //MARK: - Inits
     init(router: TopicsRouter, topicRepository: TopicsRepository) {
         self.router = router

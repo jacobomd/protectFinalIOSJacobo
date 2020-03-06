@@ -79,7 +79,7 @@ class TopicsViewController: UIViewController {
     
     //MARK: - Privates functions
     private func  showViewLogin() {
-        let vc = UserSignUpRouter.configureModule()
+        let vc = UserSignInRouter.configureModule()
         navigationController?.pushViewController(vc, animated: true)
     }
 }
@@ -125,6 +125,8 @@ extension TopicsViewController: TopicsViewControllerProtocol {
     
     func showListTopics(topics: [Topic]) {
         self.topics = topics
+        let pruebaSession = Session.loggedSession()
+        print("El estado de la session es : \(pruebaSession.description)")
         table.reloadData()
     }
    

@@ -17,6 +17,9 @@
 		1167DEDB240A526800E0DDF0 /* PostsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1167DEDA240A526800E0DDF0 /* PostsRouter.swift */; };
 		118ACE902407D068002987EE /* TopicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118ACE8E2407D068002987EE /* TopicsViewController.swift */; };
 		118ACE912407D068002987EE /* TopicsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 118ACE8F2407D068002987EE /* TopicsViewController.xib */; };
+		1191FD5A240FCCB200EDD855 /* UserSignInRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1191FD59240FCCB200EDD855 /* UserSignInRequest.swift */; };
+		1191FD5E240FD66E00EDD855 /* UserSignInResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1191FD5D240FD66E00EDD855 /* UserSignInResponse.swift */; };
+		1191FD602410220100EDD855 /* CheckSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1191FD5F2410220100EDD855 /* CheckSession.swift */; };
 		1195AD762357EE720056E58F /* SFProDisplay-UltraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1195AD732357EE710056E58F /* SFProDisplay-UltraLight.ttf */; };
 		1195AD772357EE720056E58F /* SFProDisplay-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1195AD742357EE720056E58F /* SFProDisplay-Black.ttf */; };
 		1195AD782357EE720056E58F /* SFProDisplay-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1195AD752357EE720056E58F /* SFProDisplay-Bold.ttf */; };
@@ -58,6 +61,9 @@
 		1167DEDA240A526800E0DDF0 /* PostsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsRouter.swift; sourceTree = "<group>"; };
 		118ACE8E2407D068002987EE /* TopicsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsViewController.swift; sourceTree = "<group>"; };
 		118ACE8F2407D068002987EE /* TopicsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopicsViewController.xib; sourceTree = "<group>"; };
+		1191FD59240FCCB200EDD855 /* UserSignInRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignInRequest.swift; sourceTree = "<group>"; };
+		1191FD5D240FD66E00EDD855 /* UserSignInResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignInResponse.swift; sourceTree = "<group>"; };
+		1191FD5F2410220100EDD855 /* CheckSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckSession.swift; sourceTree = "<group>"; };
 		1195AD732357EE710056E58F /* SFProDisplay-UltraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-UltraLight.ttf"; sourceTree = "<group>"; };
 		1195AD742357EE720056E58F /* SFProDisplay-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Black.ttf"; sourceTree = "<group>"; };
 		1195AD752357EE720056E58F /* SFProDisplay-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Bold.ttf"; sourceTree = "<group>"; };
@@ -109,6 +115,7 @@
 			children = (
 				11B17303240D04E700CCE753 /* ListTopicRequest.swift */,
 				11B1732A240E88A700CCE753 /* UserSignUpRequest.swift */,
+				1191FD59240FCCB200EDD855 /* UserSignInRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -389,6 +396,7 @@
 				119F81AB240BCD2A0035FA18 /* ListTopicsResponse.swift */,
 				11B17328240E86C300CCE753 /* UserSignUpResponse.swift */,
 				11B1732C240EC07900CCE753 /* ApiErrorResponse.swift */,
+				1191FD5D240FD66E00EDD855 /* UserSignInResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -396,6 +404,7 @@
 		742A18CE22DE7889004C544D /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				1191FD5F2410220100EDD855 /* CheckSession.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -552,8 +561,11 @@
 				11B1731D240E6EA000CCE753 /* UserSignInRouter.swift in Sources */,
 				1167DED9240A525900E0DDF0 /* PostsViewModel.swift in Sources */,
 				11B17302240D03E600CCE753 /* TopicsRepositoryImpl.swift in Sources */,
+				1191FD5E240FD66E00EDD855 /* UserSignInResponse.swift in Sources */,
 				1167DED5240A49E600E0DDF0 /* TopicsViewModel.swift in Sources */,
 				119F81AC240BCD2A0035FA18 /* ListTopicsResponse.swift in Sources */,
+				1191FD5A240FCCB200EDD855 /* UserSignInRequest.swift in Sources */,
+				1191FD602410220100EDD855 /* CheckSession.swift in Sources */,
 				118ACE902407D068002987EE /* TopicsViewController.swift in Sources */,
 				115D78DB24067E6C003609F2 /* PantallaInicialViewController.swift in Sources */,
 				11B17329240E86C300CCE753 /* UserSignUpResponse.swift in Sources */,

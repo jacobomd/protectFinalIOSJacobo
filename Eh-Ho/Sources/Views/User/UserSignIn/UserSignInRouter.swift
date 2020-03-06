@@ -14,13 +14,20 @@ class UserSignInRouter {
     
     static func configureModule () -> UIViewController {
         let router = UserSignInRouter()
-        let viewModel = UserSignInViewModel(router: router)
+        let session = SessionAPI()
+        let signInRepository = LoginSignUpRepositoryImpl(session: session)
+        let viewModel = UserSignInViewModel(router: router, signInRepository: signInRepository)
         let viewController = UserSignInViewController(viewModel: viewModel)
         
         viewModel.view = viewController
         router.viewcontroller = viewController
         
         return viewController
+    }
+    
+    func navigateToTopicList() {
+        viewcontroller?.navigationController?.pushViewController(TopicsRouter.configureModule(), animated: true)
+        
     }
 }
 

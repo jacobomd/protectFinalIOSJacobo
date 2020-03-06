@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UserSignInViewController" customModule="Eh_Ho" customModuleProvider="target">
             <connections>
+                <outlet property="txtPassword" destination="Ulj-BG-hxm" id="jTs-75-rv4"/>
+                <outlet property="txtUserName" destination="XCR-vp-iJv" id="SKn-AO-Weo"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -43,6 +45,9 @@
                             <state key="normal" title="SIGNIN">
                                 <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
+                            <connections>
+                                <action selector="butSignIn:" destination="-1" eventType="touchUpInside" id="Rbw-Vv-UuZ"/>
+                            </connections>
                         </button>
                     </subviews>
                     <constraints>

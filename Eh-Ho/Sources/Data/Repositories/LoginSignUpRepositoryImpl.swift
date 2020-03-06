@@ -25,5 +25,11 @@ class LoginSignUpRepositoryImpl: LoginSignUpRepository {
         
     }
     
+    func signInUser(userName: String, password: String, completion: @escaping (Result<UserSignInResponse, ApiErrorResponse>) -> ()) {
+        let request = UserSignInRequest(userName: userName) // Solo necesita el username para hacer el login.
+        session.send(request: request) { (result) in
+            completion(result)
+        }
+    }
     
 }

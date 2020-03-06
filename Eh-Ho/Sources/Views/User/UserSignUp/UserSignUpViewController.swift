@@ -49,8 +49,7 @@ class UserSignUpViewController: UIViewController {
     }
     
     @IBAction func butGotoSignIn(_ sender: Any) {
-        let vc = UserSignInRouter.configureModule()
-        self.navigationController?.pushViewController(vc, animated: true)
+        self.navigationController?.popViewController(animated: true)
     }
     
     //MARK: - UI
@@ -58,7 +57,7 @@ class UserSignUpViewController: UIViewController {
 
     self.title = "Register"
     let backItem = UIBarButtonItem()
-    backItem.title = "register"
+    backItem.title = "topics"
     let color = UIColor(red: 291/255, green: 99/255, blue: 0/255, alpha: 1.0)
     backItem.tintColor = color
     navigationItem.backBarButtonItem = backItem
@@ -97,7 +96,7 @@ extension UserSignUpViewController: UserSignUpViewControllerProtocol {
     
     private func showErrorUserCreatedAlert (message: String) {
         let alert = UIAlertController(title: message, message: nil, preferredStyle: .alert)
-        let action = UIAlertAction(title: "ok", style: .default, handler: nil)
+        let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
         alert.addAction(action)
         self.present(alert, animated: true, completion: nil)
     }

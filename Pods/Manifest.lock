@@ -1,16 +1,21 @@
 PODS:
   - lottie-ios (3.1.2)
+  - Strongbox (0.5.3)
 
 DEPENDENCIES:
   - lottie-ios
+  - Strongbox
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - lottie-ios
+  trunk:
+    - Strongbox
 
 SPEC CHECKSUMS:
   lottie-ios: 49cd85b1f24f61a7708ad7ec76a523ab2d0e3100
+  Strongbox: 83764666aa2497027b1a40691b8e366e17be8bee
 
-PODFILE CHECKSUM: 05d0e126b43a58005d0d5357756fdb44c88715f5
+PODFILE CHECKSUM: e5a6365769d85d615697295fb2f54ab25936dd17
 
-COCOAPODS: 1.7.5
+COCOAPODS: 1.8.4

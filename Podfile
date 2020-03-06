@@ -7,5 +7,6 @@ target 'Eh-Ho' do
 
   # Pods for Eh-Ho
   pod 'lottie-ios'
+  pod "Strongbox"
 
 end
