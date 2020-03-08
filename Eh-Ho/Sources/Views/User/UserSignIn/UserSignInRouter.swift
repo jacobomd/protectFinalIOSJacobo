@@ -26,7 +26,8 @@ class UserSignInRouter {
     }
     
     func navigateToTopicList() {
-        viewcontroller?.navigationController?.pushViewController(TopicsRouter.configureModule(), animated: true)
+        let navVc = UINavigationController(rootViewController: TopicsRouter.configureModule())
+        viewcontroller?.present(navVc, animated: true, completion: nil)
         
     }
 }

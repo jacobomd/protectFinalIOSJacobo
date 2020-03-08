@@ -23,4 +23,18 @@ class TopicsRepositoryImpl: TopicsRepository {
             completion(result)
         }
     }
+    
+    func getSingleTopicById(id: Int, completion: @escaping (Result<SingleTopicResponse, ApiErrorResponse>) -> ()) {
+        let request = SingleTopicRequest(id: id)
+        session.send(request: request) { result in
+            completion(result)
+        }
+    }
+    
+    func detailUser(userName: String, password: String, completion: @escaping (Result<UserSignInResponse, ApiErrorResponse>) -> ()) {
+        let request = UserSignInRequest(userName: userName) // Solo necesita el username para hacer el login.
+        session.send(request: request) { (result) in
+            completion(result)
+        }
+    }
 }

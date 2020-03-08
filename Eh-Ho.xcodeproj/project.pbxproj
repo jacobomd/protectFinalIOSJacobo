@@ -26,6 +26,10 @@
 		119F81A9240BCB310035FA18 /* TopicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119F81A7240BCB310035FA18 /* TopicCell.swift */; };
 		119F81AA240BCB310035FA18 /* TopicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 119F81A8240BCB310035FA18 /* TopicCell.xib */; };
 		119F81AC240BCD2A0035FA18 /* ListTopicsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119F81AB240BCD2A0035FA18 /* ListTopicsResponse.swift */; };
+		11A21D75241399E200C8C19A /* SingleTopicResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A21D74241399E200C8C19A /* SingleTopicResponse.swift */; };
+		11A21D7724139A2600C8C19A /* SingleTopicRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A21D7624139A2600C8C19A /* SingleTopicRequest.swift */; };
+		11A21D7D2414CD9600C8C19A /* DeatilUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A21D7B2414CD9600C8C19A /* DeatilUserViewController.swift */; };
+		11A21D7E2414CD9600C8C19A /* DeatilUserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11A21D7C2414CD9600C8C19A /* DeatilUserViewController.xib */; };
 		11B17300240D02DC00CCE753 /* TopicsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B172FF240D02DC00CCE753 /* TopicsRepository.swift */; };
 		11B17302240D03E600CCE753 /* TopicsRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B17301240D03E600CCE753 /* TopicsRepositoryImpl.swift */; };
 		11B17304240D04E700CCE753 /* ListTopicRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B17303240D04E700CCE753 /* ListTopicRequest.swift */; };
@@ -70,6 +74,10 @@
 		119F81A7240BCB310035FA18 /* TopicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicCell.swift; sourceTree = "<group>"; };
 		119F81A8240BCB310035FA18 /* TopicCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopicCell.xib; sourceTree = "<group>"; };
 		119F81AB240BCD2A0035FA18 /* ListTopicsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTopicsResponse.swift; sourceTree = "<group>"; };
+		11A21D74241399E200C8C19A /* SingleTopicResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTopicResponse.swift; sourceTree = "<group>"; };
+		11A21D7624139A2600C8C19A /* SingleTopicRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTopicRequest.swift; sourceTree = "<group>"; };
+		11A21D7B2414CD9600C8C19A /* DeatilUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeatilUserViewController.swift; sourceTree = "<group>"; };
+		11A21D7C2414CD9600C8C19A /* DeatilUserViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeatilUserViewController.xib; sourceTree = "<group>"; };
 		11B172FF240D02DC00CCE753 /* TopicsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsRepository.swift; sourceTree = "<group>"; };
 		11B17301240D03E600CCE753 /* TopicsRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsRepositoryImpl.swift; sourceTree = "<group>"; };
 		11B17303240D04E700CCE753 /* ListTopicRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTopicRequest.swift; sourceTree = "<group>"; };
@@ -116,6 +124,7 @@
 				11B17303240D04E700CCE753 /* ListTopicRequest.swift */,
 				11B1732A240E88A700CCE753 /* UserSignUpRequest.swift */,
 				1191FD59240FCCB200EDD855 /* UserSignInRequest.swift */,
+				11A21D7624139A2600C8C19A /* SingleTopicRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -168,6 +177,7 @@
 		118ACE8D2407D041002987EE /* Topics */ = {
 			isa = PBXGroup;
 			children = (
+				11A21D78241430C200C8C19A /* DetailUser */,
 				119F81A2240BC92B0035FA18 /* Cell */,
 				118ACE8E2407D068002987EE /* TopicsViewController.swift */,
 				118ACE8F2407D068002987EE /* TopicsViewController.xib */,
@@ -194,6 +204,15 @@
 				119F81A8240BCB310035FA18 /* TopicCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		11A21D78241430C200C8C19A /* DetailUser */ = {
+			isa = PBXGroup;
+			children = (
+				11A21D7B2414CD9600C8C19A /* DeatilUserViewController.swift */,
+				11A21D7C2414CD9600C8C19A /* DeatilUserViewController.xib */,
+			);
+			path = DetailUser;
 			sourceTree = "<group>";
 		};
 		11B17305240D1EEA00CCE753 /* User */ = {
@@ -397,6 +416,7 @@
 				11B17328240E86C300CCE753 /* UserSignUpResponse.swift */,
 				11B1732C240EC07900CCE753 /* ApiErrorResponse.swift */,
 				1191FD5D240FD66E00EDD855 /* UserSignInResponse.swift */,
+				11A21D74241399E200C8C19A /* SingleTopicResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -483,6 +503,7 @@
 				11B1731B240D6DF300CCE753 /* UserSignInViewController.xib in Resources */,
 				115D78DC24067E6C003609F2 /* PantallaInicialViewController.xib in Resources */,
 				1195AD762357EE720056E58F /* SFProDisplay-UltraLight.ttf in Resources */,
+				11A21D7E2414CD9600C8C19A /* DeatilUserViewController.xib in Resources */,
 				119F81AA240BCB310035FA18 /* TopicCell.xib in Resources */,
 				742A18A122DE530B004C544D /* Assets.xcassets in Resources */,
 				11B17317240D6B3C00CCE753 /* UserSignUpViewController.xib in Resources */,
@@ -550,9 +571,11 @@
 				11B1731F240E6EB900CCE753 /* UserSignInViewModel.swift in Sources */,
 				1167DEDB240A526800E0DDF0 /* PostsRouter.swift in Sources */,
 				11B17321240E6ECF00CCE753 /* UserSignUpRouter.swift in Sources */,
+				11A21D7D2414CD9600C8C19A /* DeatilUserViewController.swift in Sources */,
 				11B17325240E853600CCE753 /* LoginSignUpRepository.swift in Sources */,
 				11B1732B240E88A700CCE753 /* UserSignUpRequest.swift in Sources */,
 				742A189A22DE5309004C544D /* AppDelegate.swift in Sources */,
+				11A21D7724139A2600C8C19A /* SingleTopicRequest.swift in Sources */,
 				11B1731A240D6DF300CCE753 /* UserSignInViewController.swift in Sources */,
 				11B17304240D04E700CCE753 /* ListTopicRequest.swift in Sources */,
 				742A18BC22DE581F004C544D /* APIRequest.swift in Sources */,
@@ -568,6 +591,7 @@
 				1191FD602410220100EDD855 /* CheckSession.swift in Sources */,
 				118ACE902407D068002987EE /* TopicsViewController.swift in Sources */,
 				115D78DB24067E6C003609F2 /* PantallaInicialViewController.swift in Sources */,
+				11A21D75241399E200C8C19A /* SingleTopicResponse.swift in Sources */,
 				11B17329240E86C300CCE753 /* UserSignUpResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

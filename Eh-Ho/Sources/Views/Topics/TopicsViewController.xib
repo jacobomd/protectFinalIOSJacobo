@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TopicsViewController" customModule="Eh_Ho" customModuleProvider="target">
             <connections>
+                <outlet property="butNewTopic" destination="0CB-eK-LOT" id="qso-b9-GAq"/>
                 <outlet property="table" destination="qvu-xq-LOG" id="lp6-wD-Tt1"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

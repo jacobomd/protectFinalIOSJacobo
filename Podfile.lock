@@ -1,21 +1,29 @@
 PODS:
+  - DynamicBlurView (4.0.0)
   - lottie-ios (3.1.2)
+  - PopupDialog (1.1.1):
+    - DynamicBlurView (~> 4.0)
   - Strongbox (0.5.3)
 
 DEPENDENCIES:
   - lottie-ios
+  - PopupDialog (~> 1.1)
   - Strongbox
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - lottie-ios
   trunk:
+    - DynamicBlurView
+    - PopupDialog
     - Strongbox
 
 SPEC CHECKSUMS:
+  DynamicBlurView: ccf9acd2b20c883cc2c72e3524a04d8d3ee20533
   lottie-ios: 49cd85b1f24f61a7708ad7ec76a523ab2d0e3100
+  PopupDialog: 720c92befd8bc23c13442254945213db5612f149
   Strongbox: 83764666aa2497027b1a40691b8e366e17be8bee
 
-PODFILE CHECKSUM: e5a6365769d85d615697295fb2f54ab25936dd17
+PODFILE CHECKSUM: 913bb8afd8b476eb6990e4550f780f5bd1fda6c6
 
 COCOAPODS: 1.8.4

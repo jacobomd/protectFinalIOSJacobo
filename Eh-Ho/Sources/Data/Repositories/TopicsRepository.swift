@@ -10,4 +10,8 @@ import Foundation
 
 protocol TopicsRepository {
     func getListTopic(completion: @escaping(Result<ListTopicsResponse, ApiErrorResponse>) -> ())
+    
+    func getSingleTopicById(id: Int, completion: @escaping(Result<SingleTopicResponse, ApiErrorResponse>) -> ())
+    
+    func detailUser ( userName: String, password: String, completion: @escaping(Result<UserSignInResponse, ApiErrorResponse>) -> ())
 }

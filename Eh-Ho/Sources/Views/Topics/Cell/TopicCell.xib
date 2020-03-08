@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,11 +14,11 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="88"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="87.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="88"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b0J-gv-gwr">
-                        <rect key="frame" x="91" y="14" width="170" height="39"/>
+                        <rect key="frame" x="91" y="14" width="170" height="39.5"/>
                         <attributedString key="attributedText">
                             <fragment content="Titulo">
                                 <attributes>
@@ -30,20 +28,8 @@
                         </attributedString>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cell_iconoPrueba" translatesAutoresizingMaskIntoConstraints="NO" id="g3O-S8-A0L">
-                        <rect key="frame" x="16" y="12" width="64" height="64"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="64" id="6Sn-ir-QvR"/>
-                            <constraint firstAttribute="height" constant="64" id="FA0-5n-3Te"/>
-                        </constraints>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                <integer key="value" value="32"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
-                    </imageView>
                     <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="wsa-D4-wSu">
-                        <rect key="frame" x="91" y="57" width="158.5" height="16.5"/>
+                        <rect key="frame" x="91" y="57.5" width="158.5" height="16.5"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="9PU-NB-DdY">
                                 <rect key="frame" x="0.0" y="0.0" width="37" height="16.5"/>
@@ -108,17 +94,28 @@
                             </stackView>
                         </subviews>
                     </stackView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WHL-0G-azN">
+                        <rect key="frame" x="16" y="12" width="64" height="64"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="64" id="8TD-zj-EB4"/>
+                            <constraint firstAttribute="width" constant="64" id="Ip9-8t-3Pf"/>
+                        </constraints>
+                        <state key="normal" image="cell_iconoPrueba"/>
+                        <connections>
+                            <action selector="butAvatar:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="eCB-5b-VzU"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="b0J-gv-gwr" firstAttribute="leading" secondItem="g3O-S8-A0L" secondAttribute="trailing" constant="11" id="2SK-nc-VDz"/>
-                    <constraint firstItem="g3O-S8-A0L" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="5Sp-DP-WMm"/>
                     <constraint firstAttribute="trailing" secondItem="b0J-gv-gwr" secondAttribute="trailing" constant="59" id="Brv-vi-Sbu"/>
-                    <constraint firstItem="g3O-S8-A0L" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Gi9-PI-END"/>
                     <constraint firstItem="wsa-D4-wSu" firstAttribute="top" secondItem="b0J-gv-gwr" secondAttribute="bottom" constant="4" id="Pt1-5b-Pni"/>
+                    <constraint firstItem="b0J-gv-gwr" firstAttribute="leading" secondItem="WHL-0G-azN" secondAttribute="trailing" constant="11" id="QMb-bH-Qup"/>
                     <constraint firstAttribute="bottom" secondItem="wsa-D4-wSu" secondAttribute="bottom" constant="14" id="TpP-SB-JQi"/>
+                    <constraint firstItem="WHL-0G-azN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="bdE-bY-v7R"/>
                     <constraint firstItem="wsa-D4-wSu" firstAttribute="leading" secondItem="b0J-gv-gwr" secondAttribute="leading" id="ddu-PQ-Uqm"/>
                     <constraint firstItem="b0J-gv-gwr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="14" id="hwp-Oq-jNj"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="wsa-D4-wSu" secondAttribute="trailing" id="qig-UK-tCa"/>
+                    <constraint firstItem="WHL-0G-azN" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="spj-m7-hch"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -128,7 +125,7 @@
                 </userDefinedRuntimeAttribute>
             </userDefinedRuntimeAttributes>
             <connections>
-                <outlet property="avatarUserImage" destination="g3O-S8-A0L" id="gVe-zO-QhH"/>
+                <outlet property="buttonAvatar" destination="WHL-0G-azN" id="bLY-Hn-Cbj"/>
                 <outlet property="dateTopicLabel" destination="cyc-Vv-a7g" id="BJc-Fk-ZXV"/>
                 <outlet property="numComentsLabel" destination="5ii-JJ-Hyf" id="vCa-Vo-Any"/>
                 <outlet property="numVisitasLabel" destination="4Qo-TU-jgz" id="JHY-LV-sCr"/>

@@ -34,4 +34,9 @@ public class Session {
         return success
     }
     
+    class func logOutSession() {
+        let strongbox = Strongbox()
+        _ = strongbox.remove(key: Constants.keySession)
+    }
+    
 }
