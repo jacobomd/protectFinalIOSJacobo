@@ -28,7 +28,9 @@ class TopicsViewModel {
     }
     
     func didTapAvatarUser(userName: String) {
-       detailUser(userName: userName)
+        detailUser(userName: userName)
+        listMessagPrivUser(userName: userName)
+        //TODO : - FALTA IMPLEMENTACIO NUMERO DE MENSAJES PRIVADOS
     }
     
     //MARK: - Private functions
@@ -72,5 +74,17 @@ class TopicsViewModel {
             }
         }
         
+    }
+    
+    private func listMessagPrivUser(userName: String) {
+        topicRepository.getMessagePrivUser(userName: userName) {
+            [weak self] result in
+            switch result {
+            case .success(let value):
+                self?.view?.showListMessagPrivUser(listMessagPriv: value.topicList.topics)
+            case .failure(let error):
+                self?.view?.showError(message: error.errors.joined(separator: ","))
+            }
+        }
     }
 }

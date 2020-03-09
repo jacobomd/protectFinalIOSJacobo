@@ -14,4 +14,6 @@ protocol TopicsRepository {
     func getSingleTopicById(id: Int, completion: @escaping(Result<SingleTopicResponse, ApiErrorResponse>) -> ())
     
     func detailUser ( userName: String, password: String, completion: @escaping(Result<UserSignInResponse, ApiErrorResponse>) -> ())
+    
+    func getMessagePrivUser (userName: String, completion: @escaping(Result<ListMessagPrivUserResponse, ApiErrorResponse>) -> ())
 }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		114F68562416B87C00B1A6D9 /* ListMessagPrivUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114F68552416B87C00B1A6D9 /* ListMessagPrivUserResponse.swift */; };
+		114F68582416BB3B00B1A6D9 /* ListMessagPrivUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114F68572416BB3B00B1A6D9 /* ListMessagPrivUserRequest.swift */; };
 		115D78DB24067E6C003609F2 /* PantallaInicialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115D78D924067E6C003609F2 /* PantallaInicialViewController.swift */; };
 		115D78DC24067E6C003609F2 /* PantallaInicialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 115D78DA24067E6C003609F2 /* PantallaInicialViewController.xib */; };
 		1167DED2240A485700E0DDF0 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1167DED0240A485700E0DDF0 /* PostsViewController.swift */; };
@@ -55,6 +57,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		114F68552416B87C00B1A6D9 /* ListMessagPrivUserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMessagPrivUserResponse.swift; sourceTree = "<group>"; };
+		114F68572416BB3B00B1A6D9 /* ListMessagPrivUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMessagPrivUserRequest.swift; sourceTree = "<group>"; };
 		115D78D924067E6C003609F2 /* PantallaInicialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantallaInicialViewController.swift; sourceTree = "<group>"; };
 		115D78DA24067E6C003609F2 /* PantallaInicialViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PantallaInicialViewController.xib; sourceTree = "<group>"; };
 		1167DED0240A485700E0DDF0 /* PostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
@@ -125,6 +129,7 @@
 				11B1732A240E88A700CCE753 /* UserSignUpRequest.swift */,
 				1191FD59240FCCB200EDD855 /* UserSignInRequest.swift */,
 				11A21D7624139A2600C8C19A /* SingleTopicRequest.swift */,
+				114F68572416BB3B00B1A6D9 /* ListMessagPrivUserRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -417,6 +422,7 @@
 				11B1732C240EC07900CCE753 /* ApiErrorResponse.swift */,
 				1191FD5D240FD66E00EDD855 /* UserSignInResponse.swift */,
 				11A21D74241399E200C8C19A /* SingleTopicResponse.swift */,
+				114F68552416B87C00B1A6D9 /* ListMessagPrivUserResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -577,6 +583,8 @@
 				742A189A22DE5309004C544D /* AppDelegate.swift in Sources */,
 				11A21D7724139A2600C8C19A /* SingleTopicRequest.swift in Sources */,
 				11B1731A240D6DF300CCE753 /* UserSignInViewController.swift in Sources */,
+				114F68562416B87C00B1A6D9 /* ListMessagPrivUserResponse.swift in Sources */,
+				114F68582416BB3B00B1A6D9 /* ListMessagPrivUserRequest.swift in Sources */,
 				11B17304240D04E700CCE753 /* ListTopicRequest.swift in Sources */,
 				742A18BC22DE581F004C544D /* APIRequest.swift in Sources */,
 				11B17327240E855E00CCE753 /* LoginSignUpRepositoryImpl.swift in Sources */,

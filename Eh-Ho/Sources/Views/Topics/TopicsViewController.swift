@@ -19,10 +19,10 @@ class TopicsViewController: UIViewController {
     let viewModel : TopicsViewModel
     var topics : [Topic] = []
     var users : [User] = []
+    var listMessagPriv: [TopicMessagePrivateUser] = []
     var detailUser : LoginUser?
     var avartars : String = ""
-    
-    
+        
     //MARK: - Inits
     init(viewModel: TopicsViewModel) {
         self.viewModel = viewModel
@@ -123,6 +123,8 @@ class TopicsViewController: UIViewController {
 
         // Create a custom view controller
         let detailUserVC = DeatilUserViewController(nibName: "DeatilUserViewController", bundle: nil)
+          
+
         
         // Create the dialog
         let popup = PopupDialog(viewController: detailUserVC,
@@ -133,15 +135,55 @@ class TopicsViewController: UIViewController {
                                 panGestureDismissal: false
                                 )
         
-        guard let labelUsername = detailUser?.username else {return}
-        guard let labelName = detailUser?.name else {return}
-        guard let labelStatusModerator = detailUser?.moderator else {return}
-        guard let labelLastSeen = detailUser?.lastSeenAt else {return}
+        // Avatar
+        guard let avatar = detailUser?.avatarTemplate else {return}
+        let avatarFinal = avatar.replacingOccurrences(of: "{size}", with: "130")
+        let imagAvatar = "https://mdiscourse.keepcoding.io/\(avatarFinal)"
         
-        detailUserVC.configure(labelUsername: labelUsername, labelName: labelName, labelStatusModerator: labelStatusModerator, labelLastSeen: labelLastSeen)
+        // UserName
+        guard let labelUsername =  detailUser?.username else {return}
+        
+        // Name
+        guard let labelName =  detailUser?.name else {return}
+        
+        // Status moderator
+        var labelStatusModerator = "nulo"
+        if detailUser?.moderator == true {
+              labelStatusModerator = "Yes"
+        } else {
+              labelStatusModerator = "No"
+        }
+        
+        // Last session
+        guard let labelLastSeen =  detailUser?.lastSeenAt else {return}
+        let labelLastSeenFormater = convertDateFormater(date: labelLastSeen)
+        
+        // Number privates messages
+        let labelMessPriva = listMessagPriv.count.description
+        
+        
+        detailUserVC.configure(avatar: imagAvatar, username: labelUsername, name: labelName, statusModerator: labelStatusModerator, lastSeen: labelLastSeenFormater, listMessagPriv: labelMessPriva)
         
         // Present dialog
         present(popup, animated: animated, completion: nil)
+    }
+    
+    private func convertDateFormater(date: String) -> String {
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        dateFormatter.timeZone = NSTimeZone(name: "UTC") as TimeZone?
+        
+        guard let date = dateFormatter.date(from: date) else {
+            assert(false, "no date from string")
+            
+        }
+        
+        dateFormatter.dateFormat = " MMM dd "
+        dateFormatter.timeZone = NSTimeZone(name: "UTC") as TimeZone?
+        let timeStamp = dateFormatter.string(from: date)
+        return timeStamp
+        
     }
 }
 
@@ -166,23 +208,24 @@ extension TopicsViewController: UITableViewDataSource{
         let numComents = topics[indexPath.row].postsCount
         let dateTopic = topics[indexPath.row].createdAt!
         
+        let dateTopicFormater = convertDateFormater(date: dateTopic)
+        
         let posters = topics[indexPath.row].posters
         for poster in posters {
             if poster.description.starts(with: "Original Poster") {
-                 let userPoster = poster.userID
+                let userPoster = poster.userID
                 for user in users {
                     if userPoster == user.id {
                         let avatar = user.avatarTemplate
                         let avatarFinal = avatar.replacingOccurrences(of: "{size}", with: "64")
                         let image = "https://mdiscourse.keepcoding.io/\(avatarFinal)"
                         
-                        cell.configure(title: title, numVisitas: "\(numVisitas)", numComents: "\(numComents)", dateTopic: "\(dateTopic)", avatarUserImage: image )
+                        cell.configure(title: title, numVisitas: "\(numVisitas)", numComents: "\(numComents)", dateTopic: "\(dateTopicFormater)", avatarUserImage: image )
                         
                         cell.actionBlock = {
                             print("PULSADO BOTON DEL AVATAR CON LA ID : \(user.username)")
-                            self.showCustomDialog()
                             self.viewModel.didTapAvatarUser(userName: user.username)
-                            
+                           
                         }
                     } 
                 }
@@ -201,12 +244,21 @@ protocol TopicsViewControllerProtocol: class {
     func showListTopics (topics: [Topic], users: [User])
     func showListAvatarByTopic(avatar: String)
     func showDetailUser(detailUser: LoginUser)
+    func showListMessagPrivUser(listMessagPriv: [TopicMessagePrivateUser])
     func showError (message: String)
 }
 
 extension TopicsViewController: TopicsViewControllerProtocol {
+    
+    func showListMessagPrivUser(listMessagPriv: [TopicMessagePrivateUser]) {
+        self.listMessagPriv = listMessagPriv
+        self.showCustomDialog()
+    }
+    
+    
     func showDetailUser(detailUser: LoginUser) {
         self.detailUser = detailUser
+        self.showCustomDialog()
     }
    
     func showListTopics(topics: [Topic], users: [User]) {
@@ -222,7 +274,7 @@ extension TopicsViewController: TopicsViewControllerProtocol {
     }
    
     func showError(message: String) {
-        print("Errorrrrr")
+        print("Errorrrrr: \(message)")
     }
 }
 

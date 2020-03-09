@@ -40,10 +40,7 @@ class UserSignUpViewController: UIViewController {
         guard let email = txtEmail.text,
             let name = txtName.text,
             let userName = txtUserName.text,
-            let password = txtPassw.text else {
-            //TODO: - Aqui se podría poner un alert!
-            return
-        }
+            let password = txtPassw.text else {return}
         
         viewModel.didTapInSignUp(email: email, name: name, userName: userName, password: password)
     }

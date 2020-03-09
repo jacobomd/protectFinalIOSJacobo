@@ -37,4 +37,11 @@ class TopicsRepositoryImpl: TopicsRepository {
             completion(result)
         }
     }
+    
+    func getMessagePrivUser(userName: String, completion: @escaping (Result<ListMessagPrivUserResponse, ApiErrorResponse>) -> ()) {
+        let request = ListMessagPrivUserRequest(userName: userName)
+        session.send(request: request) { (result) in
+            completion(result)
+        }
+    }
 }

@@ -12,6 +12,7 @@
                 <outlet property="imagAvatar" destination="Het-EV-Isn" id="M0i-H4-uK5"/>
                 <outlet property="labelLastSeen" destination="P9L-3h-ytw" id="9A6-L3-BHF"/>
                 <outlet property="labelName" destination="z9s-M7-4GE" id="mBq-n9-oQ2"/>
+                <outlet property="labelNumMessagPriv" destination="NQg-Ut-OJx" id="SH2-FD-218"/>
                 <outlet property="labelStatusModerator" destination="4dL-2F-8rV" id="QWs-mv-c7A"/>
                 <outlet property="labelUserName" destination="fqK-Ff-afk" id="N6K-uc-EmS"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
