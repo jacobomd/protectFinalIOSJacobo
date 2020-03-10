@@ -26,13 +26,16 @@ class UserSignInViewModel {
         signInUser(userName: userName, password: password)
     }
     
+    func didTapInPasswReset(login: String) {
+        passwordReset(login: login)
+    }
+    
     func navigateToTopics() {
         router.navigateToTopicList()
     }
     
     //MARK: - Private functions
     private func signInUser(userName: String, password: String) {
-        
         signInRepository.signInUser(userName: userName, password: password) {
             [weak self] result in
             switch result {
@@ -43,6 +46,17 @@ class UserSignInViewModel {
                 self?.view?.showErrorUserLogged(error: error.errors.joined(separator: ","))
             }
         }
-        
+    }
+    
+    private func passwordReset(login: String) {
+        signInRepository.passwordReset(login: login) {
+            [weak self] result in
+            switch result {
+            case .success( _):
+                self?.view?.showPasswReset()
+            case .failure(let error):
+                self?.view?.showErrorUserLogged(error: error.errors.joined(separator: ","))
+            }
+        }
     }
 }

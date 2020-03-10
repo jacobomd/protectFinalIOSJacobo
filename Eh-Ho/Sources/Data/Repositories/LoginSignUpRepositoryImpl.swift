@@ -32,4 +32,12 @@ class LoginSignUpRepositoryImpl: LoginSignUpRepository {
         }
     }
     
+    func passwordReset(login: String, completion: @escaping (Result<PasswordResetResponse,
+        ApiErrorResponse>) -> ()) {
+        let request = PasswordResetRequest(login: login)
+        session.send(request: request) { (result) in
+            completion(result)
+        }
+    }
+    
 }

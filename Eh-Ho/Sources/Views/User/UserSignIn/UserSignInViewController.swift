@@ -18,6 +18,7 @@ class UserSignInViewController: UIViewController {
     
     //MARK: - Propierties
     let viewModel : UserSignInViewModel
+    var login : String = ""
    
     //MARK: - Inits
     init(viewModel: UserSignInViewModel) {
@@ -35,8 +36,6 @@ class UserSignInViewController: UIViewController {
         setupUI()
     }
     
-
-    
     //MARK: - Navigations
     @IBAction func butGotoSignUp(_ sender: Any) {
         self.navigationController?.pushViewController(UserSignUpRouter.configureModule(), animated: true)
@@ -46,6 +45,11 @@ class UserSignInViewController: UIViewController {
             let password = txtPassword.text else {return}
         viewModel.didTapInSignIn(userName: userName, password: password)
     }
+    
+    @IBAction func butPasswReset(_ sender: Any) {
+        showPasswResetAlert()
+    }
+    
     
     //MARK: - UI
     func setupUI() {
@@ -61,18 +65,46 @@ class UserSignInViewController: UIViewController {
         
     }
     
+    //MARK: - Private functions
+    private func showPasswResetAlert()  {
+        //Create the alert
+        let alert = UIAlertController(title: "Enter your username or email, and we'll send you a password reset email", message: nil, preferredStyle: .alert)
+        
+        alert.addTextField { (UITextField) in
+            UITextField.placeholder = "Enter your username or email"
+            UITextField.textAlignment = .center
+        }
+        
+        //Creamos la accion
+        let action = UIAlertAction(title: "Reset Password", style: .default) { [unowned alert] _ in
+            self.login = alert.textFields![0].text!
+            self.viewModel.didTapInPasswReset(login: self.login)
+        }
+        
+        //Aañadimos a la alerta
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
+    }
 }
 
-//MARK: - Comunication with ViewModel
 
+
+
+//MARK: - Comunication with ViewModel
 protocol UserSignInViewControllerProtocol: class {
     func showUserLogged(value: String)
+    func showPasswReset()
     func showErrorUserLogged(error: String)
 }
 
 extension UserSignInViewController: UserSignInViewControllerProtocol {
+    
     func showUserLogged(value: String) {
         showUserLoggedAlert (message: "Usario logueado satisfactoriamente con el nombre de : \(value)")
+    }
+    
+    func showPasswReset() {
+        showUserLoggedAlert(message: "We found an account that matches the username jacobomd, you should receive an email with instructions on how to reset your password shortly.")
     }
     
     func showErrorUserLogged(error: String) {

@@ -15,4 +15,7 @@ protocol LoginSignUpRepository {
     
     func signInUser ( userName: String, password: String, completion: @escaping(Result<UserSignInResponse, ApiErrorResponse>) -> ())
     
+    func passwordReset (login: String, completion: @escaping(Result<PasswordResetResponse,
+        ApiErrorResponse>) -> ())
+    
 }

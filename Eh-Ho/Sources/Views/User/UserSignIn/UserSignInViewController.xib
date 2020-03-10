@@ -27,20 +27,30 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="ybf-h6-3aq">
-                    <rect key="frame" x="57" y="269" width="300" height="300"/>
+                    <rect key="frame" x="57" y="269" width="300" height="324"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Insert a username ..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XCR-vp-iJv">
-                            <rect key="frame" x="0.0" y="0.0" width="300" height="60"/>
+                            <rect key="frame" x="0.0" y="0.0" width="300" height="36"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Insert a password ..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ulj-BG-hxm">
-                            <rect key="frame" x="0.0" y="120" width="300" height="60"/>
+                            <rect key="frame" x="0.0" y="96" width="300" height="36"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hU0-3b-3dA">
+                            <rect key="frame" x="0.0" y="192" width="300" height="36"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <state key="normal" title="I forgot my password">
+                                <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </state>
+                            <connections>
+                                <action selector="butPasswReset:" destination="-1" eventType="touchUpInside" id="b7T-89-1hq"/>
+                            </connections>
+                        </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oa5-Iz-l1O">
-                            <rect key="frame" x="0.0" y="240" width="300" height="60"/>
+                            <rect key="frame" x="0.0" y="288" width="300" height="36"/>
                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <state key="normal" title="SIGNIN">
                                 <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -58,9 +68,8 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Tzd-rJ-WpB">
                     <rect key="frame" x="80" y="104" width="254" height="65"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cr2-2n-93u">
-                    <rect key="frame" x="121" y="586" width="173" height="29"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cr2-2n-93u">
+                    <rect key="frame" x="120.5" y="637" width="173" height="29"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <state key="normal" title="CREATE A NEW ACCOUNT">
                         <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -73,6 +82,7 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="ULB-Nv-XgZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="0iC-oY-vbP"/>
+                <constraint firstItem="cr2-2n-93u" firstAttribute="top" secondItem="ybf-h6-3aq" secondAttribute="bottom" constant="44" id="78x-k5-dfb"/>
                 <constraint firstItem="Tzd-rJ-WpB" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="60" id="8aZ-su-FB2"/>
                 <constraint firstItem="ggQ-4p-ZRF" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Bba-GF-ndU"/>
                 <constraint firstAttribute="trailing" secondItem="ULB-Nv-XgZ" secondAttribute="trailing" id="DCg-KO-PsF"/>
@@ -87,6 +97,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ULB-Nv-XgZ" secondAttribute="trailing" id="ivo-Fe-Pke"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ggQ-4p-ZRF" secondAttribute="trailing" id="nok-2m-dHy"/>
                 <constraint firstItem="ybf-h6-3aq" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="oOL-7c-PWf"/>
+                <constraint firstItem="cr2-2n-93u" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="qF1-YB-HSn"/>
                 <constraint firstAttribute="bottom" secondItem="ULB-Nv-XgZ" secondAttribute="bottom" id="sES-fI-zi3"/>
                 <constraint firstItem="Tzd-rJ-WpB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="80" id="tEc-2C-LDP"/>
                 <constraint firstAttribute="bottom" secondItem="ggQ-4p-ZRF" secondAttribute="bottom" id="tRP-4f-qf9"/>
