@@ -93,7 +93,7 @@ class UserSignInViewController: UIViewController {
 //MARK: - Comunication with ViewModel
 protocol UserSignInViewControllerProtocol: class {
     func showUserLogged(value: String)
-    func showPasswReset()
+    func showPasswReset(login: String)
     func showErrorUserLogged(error: String)
 }
 
@@ -103,8 +103,8 @@ extension UserSignInViewController: UserSignInViewControllerProtocol {
         showUserLoggedAlert (message: "Usario logueado satisfactoriamente con el nombre de : \(value)")
     }
     
-    func showPasswReset() {
-        showUserLoggedAlert(message: "We found an account that matches the username jacobomd, you should receive an email with instructions on how to reset your password shortly.")
+    func showPasswReset(login: String) {
+        showUserLoggedAlert(message: "We found an account that matches the username \(login), you should receive an email with instructions on how to reset your password shortly.")
     }
     
     func showErrorUserLogged(error: String) {

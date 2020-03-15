@@ -28,4 +28,14 @@ class TopicsRouter {
         
     }
     
+    func navigateToPosts(id: Int) {
+        let viewControllerToPush = PostRouter.configureModule(id: id)
+        viewControllerToPush.hidesBottomBarWhenPushed = true
+        viewController?.navigationController?.pushViewController(viewControllerToPush, animated: true)
+    }
+    
+    func navigateToCreateTopic() {
+        let viewControllerToCreateTopic = CreateTopicsRouter.configureModule()
+        viewController?.navigationController?.pushViewController(viewControllerToCreateTopic, animated: true)
+    }
 }

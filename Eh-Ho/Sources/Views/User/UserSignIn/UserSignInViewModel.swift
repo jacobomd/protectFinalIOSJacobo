@@ -53,7 +53,7 @@ class UserSignInViewModel {
             [weak self] result in
             switch result {
             case .success( _):
-                self?.view?.showPasswReset()
+                self?.view?.showPasswReset(login: login)
             case .failure(let error):
                 self?.view?.showErrorUserLogged(error: error.errors.joined(separator: ","))
             }

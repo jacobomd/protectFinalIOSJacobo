@@ -28,7 +28,7 @@
                     <rect key="frame" x="330" y="748" width="64" height="64"/>
                     <state key="normal" image="temas_ButtonAdd"/>
                     <connections>
-                        <action selector="buttonAddTopic:" destination="-1" eventType="touchUpInside" id="hs7-fY-FyY"/>
+                        <action selector="butNewTopic:" destination="-1" eventType="touchUpInside" id="CkO-CI-BSY"/>
                     </connections>
                 </button>
             </subviews>

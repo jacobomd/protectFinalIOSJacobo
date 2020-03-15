@@ -33,6 +33,15 @@ class TopicsViewModel {
         //TODO : - FALTA IMPLEMENTACIO NUMERO DE MENSAJES PRIVADOS
     }
     
+    //MARK: - Navigations
+    func didTapInTopic(id: Int) {
+        router.navigateToPosts(id: id)
+    }
+    
+    func didTapInCreateTopic() {
+        router.navigateToCreateTopic()
+    }
+    
     //MARK: - Private functions
     private func fetchListTopics () {
         

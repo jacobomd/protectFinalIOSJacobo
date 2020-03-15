@@ -18,6 +18,7 @@ class TopicsViewController: UIViewController {
     //MARK: - Propierties
     let viewModel : TopicsViewModel
     var topics : [Topic] = []
+    var idTopics: Int = 0
     var users : [User] = []
     var listMessagPriv: [TopicMessagePrivateUser] = []
     var detailUser : LoginUser?
@@ -33,16 +34,37 @@ class TopicsViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    //MARK: - RefreshControll
+    lazy var refreshControl:UIRefreshControl = {
+        let refresControl = UIRefreshControl()
+        //QUE AL CAMBIAR EL VALOR, SE EJECUTE UN MÉTODO
+        refresControl.addTarget(self, action: #selector(TopicsViewController.actualizarDatos(_:)), for: .valueChanged)
+        //ESTABLECER EL COLOR DE LA RULETILLA
+        refresControl.tintColor = UIColor.blue
+        return refresControl
+    }()
+    
+    @objc func actualizarDatos(_ refresControl: UIRefreshControl){
+        //AQUI TU TIENES QUE ACTUALIZAR TUS DATOS. TU DATASOURCE. LLAMAR A TU SERVIDOR, VOLVER A TRAER LOS DATOS. ELIMINAR O AÑADIR AL ELEMENTO PERSISTIDO
+        viewModel.viewDidLoad()
+        //REFRESCO LA VISTA DE TABLA
+        self.table.reloadData()
+        //PARO EL REFRESH CONTROL
+        refresControl.endRefreshing()
+    }
     
     //MARK: - Cycle life
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         table.delegate = self
         table.dataSource = self
-        setupUI()
+        
         let cell = UINib(nibName: "TopicCell", bundle: nil)
         table.register(cell, forCellReuseIdentifier: "TopicCell")
         viewModel.viewDidLoad()
+        table.refreshControl = refreshControl
+        setupUI()
     }
     
     
@@ -76,10 +98,13 @@ class TopicsViewController: UIViewController {
     }
     
     //MARK: - Navigations
-
-    @IBAction func buttonAddTopic(_ sender: Any) {
-        print("botón de añadir topic nuevo pulsado")
+    @IBAction func butNewTopic(_ sender: Any) {
+        viewModel.didTapInCreateTopic()
     }
+    
+ //   @IBAction func buttonAddTopic(_ sender: Any) {
+  //      viewModel.didTapInCreateTopic()
+  //  }
     
     @objc func displayLogin () {
         showViewLogin()
@@ -202,6 +227,7 @@ extension TopicsViewController: UITableViewDataSource{
                 return UITableViewCell()
         }
         
+        idTopics = topics[indexPath.row].id
         
         let title = topics[indexPath.row].title
         let numVisitas = topics[indexPath.row].views
@@ -209,6 +235,7 @@ extension TopicsViewController: UITableViewDataSource{
         let dateTopic = topics[indexPath.row].createdAt!
         
         let dateTopicFormater = convertDateFormater(date: dateTopic)
+        
         
         let posters = topics[indexPath.row].posters
         for poster in posters {
@@ -236,6 +263,11 @@ extension TopicsViewController: UITableViewDataSource{
 }
 
 extension TopicsViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            let id = topics[indexPath.row].id
+            viewModel.didTapInTopic(id: id)
+    }
     
 }
 
