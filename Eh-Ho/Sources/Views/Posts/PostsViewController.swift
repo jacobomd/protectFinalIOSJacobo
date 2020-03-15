@@ -98,7 +98,11 @@ class PostsViewController: UIViewController {
     }
     
     @objc func createMessage() {
-        viewModel.didTapInTopic(id: self.id)
+        if Session.loggedSession() {
+            viewModel.didTapInTopic(id: self.id)
+        } else {
+            showCreatePostAlert(message: "You have to be logged in to perform this action")
+        }
     }
     
     private func convertDateFormater(date: String) -> String {
@@ -117,6 +121,18 @@ class PostsViewController: UIViewController {
         let timeStamp = dateFormatter.string(from: date)
         return timeStamp
         
+    }
+    
+    private func showCreatePostAlert(message: String)  {
+        //Create the alert
+        let alert = UIAlertController(title: message, message: nil, preferredStyle: .alert)
+        
+        //Creamos la accion
+        let action = UIAlertAction(title: "ok", style: .default, handler: nil)
+        
+        //Aañadimos a la alerta
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
     }
 
 }

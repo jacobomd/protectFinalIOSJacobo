@@ -43,9 +43,9 @@ class CreateTopicViewController: UIViewController {
         textDescription = txtDescription.text
         
         if (txtTitle.text!.count < 15) {
-            showPustTopicAlert(message: "Introduzca más de 15 caracteres en titulo")
+            showPustTopicAlert(message: "Insert more than 15 characters in title")
         }else if (txtDescription.text!.count < 20) {
-            showPustTopicAlert(message: "Introduzca más de 20 caracteres en descripción")
+            showPustTopicAlert(message: "Insert more than 20 characters in description")
         }else {
             viewModel.didTapInTopic(title: textTitle!, raw: textDescription!)
             txtTitle.text = ""
@@ -64,12 +64,12 @@ protocol CreateTopicsViewControllerProtocol: class {
 
 extension CreateTopicViewController: CreateTopicsViewControllerProtocol {
     func createNewTopic() {
-        showPustTopicAlert(message: "Topic creado con exito")
+        showPustTopicAlert(message: "Topic created successfully")
     }
     
     func showError(with message: String) {
         //AQUI ENSEÑAMOS ALERTA
-        showPustTopicAlert(message: "Se ha producido un errorr al crear el topic")
+        showPustTopicAlert(message: "An error occurred while creating the topic")
     }
     
 }
