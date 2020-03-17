@@ -6,7 +6,8 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var avatarImage: UIImageView!
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var date: UILabel!
-    @IBOutlet weak var descripcion: UITextView!
+    @IBOutlet weak var descripcion: UILabel!
+    
     
     //MARK: - Cycle life
     override func awakeFromNib() {
@@ -28,9 +29,7 @@ class PostCell: UITableViewCell {
     }
     
     static func estimateRowHeight() -> CGFloat {
-        
-        return 200.0
-        
+        return 120.0
     }
     
 }

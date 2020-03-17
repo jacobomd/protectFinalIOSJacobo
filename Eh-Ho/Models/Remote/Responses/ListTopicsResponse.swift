@@ -112,7 +112,9 @@ struct Poster: Codable {
 
 struct User: Codable {
     let id: Int
-    let username, name, avatarTemplate: String
+    let username: String
+    let name: String?
+    let avatarTemplate: String
     
     enum CodingKeys: String, CodingKey {
         case id, username, name

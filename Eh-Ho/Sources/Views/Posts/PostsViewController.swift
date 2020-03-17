@@ -53,12 +53,14 @@ class PostsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        tableViewPosts.rowHeight = UITableView.automaticDimension
-        tableViewPosts.estimatedRowHeight = PostCell.estimateRowHeight()
         tableViewPosts.dataSource = self
         tableViewPosts.delegate = self
+        
+        tableViewPosts.rowHeight = UITableView.automaticDimension
+        tableViewPosts.estimatedRowHeight = PostCell.estimateRowHeight()
         let cellPost = UINib(nibName: "PostCell", bundle: nil)
         tableViewPosts.register(cellPost, forCellReuseIdentifier: "PostCell")
+        self.tableViewPosts.tableFooterView = UIView()
         
         self.title = "Posts"
         viewModel.viewDidLoad()
@@ -138,23 +140,15 @@ class PostsViewController: UIViewController {
 }
 
 //MARK: - Extensions
+
 extension PostsViewController: UITableViewDataSource {
-
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        var count: CGFloat?
-        
-        tableView.estimatedRowHeight = 150
-        count = 150
-        
-        return count!
-    }
-
+    
+ 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var count: Int?
-        
         if tableView == tableViewPosts {
-                count =  posts.count
+            count =  posts.count
         }
         return count!
     }

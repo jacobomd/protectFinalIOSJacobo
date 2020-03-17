@@ -35,8 +35,6 @@
 		117CD698241DC8EB00E5F813 /* CreateTopicRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117CD697241DC8EB00E5F813 /* CreateTopicRouter.swift */; };
 		117CD69A241DC99D00E5F813 /* AddNewTopicResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117CD699241DC99D00E5F813 /* AddNewTopicResponse.swift */; };
 		117CD69C241DC9D700E5F813 /* CreateTopicRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117CD69B241DC9D700E5F813 /* CreateTopicRequest.swift */; };
-		117CD6A0241DD1E400E5F813 /* PruebaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117CD69E241DD1E400E5F813 /* PruebaViewController.swift */; };
-		117CD6A1241DD1E400E5F813 /* PruebaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 117CD69F241DD1E400E5F813 /* PruebaViewController.xib */; };
 		117CD6A4241DD33900E5F813 /* CreateTopicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117CD6A2241DD33900E5F813 /* CreateTopicViewController.swift */; };
 		117CD6A5241DD33900E5F813 /* CreateTopicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 117CD6A3241DD33900E5F813 /* CreateTopicViewController.xib */; };
 		118ACE902407D068002987EE /* TopicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118ACE8E2407D068002987EE /* TopicsViewController.swift */; };
@@ -107,8 +105,6 @@
 		117CD697241DC8EB00E5F813 /* CreateTopicRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTopicRouter.swift; sourceTree = "<group>"; };
 		117CD699241DC99D00E5F813 /* AddNewTopicResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTopicResponse.swift; sourceTree = "<group>"; };
 		117CD69B241DC9D700E5F813 /* CreateTopicRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTopicRequest.swift; sourceTree = "<group>"; };
-		117CD69E241DD1E400E5F813 /* PruebaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PruebaViewController.swift; sourceTree = "<group>"; };
-		117CD69F241DD1E400E5F813 /* PruebaViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PruebaViewController.xib; sourceTree = "<group>"; };
 		117CD6A2241DD33900E5F813 /* CreateTopicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTopicViewController.swift; sourceTree = "<group>"; };
 		117CD6A3241DD33900E5F813 /* CreateTopicViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateTopicViewController.xib; sourceTree = "<group>"; };
 		118ACE8E2407D068002987EE /* TopicsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsViewController.swift; sourceTree = "<group>"; };
@@ -260,19 +256,9 @@
 			path = CreateTopic;
 			sourceTree = "<group>";
 		};
-		117CD69D241DD1C800E5F813 /* prueba */ = {
-			isa = PBXGroup;
-			children = (
-				117CD69E241DD1E400E5F813 /* PruebaViewController.swift */,
-				117CD69F241DD1E400E5F813 /* PruebaViewController.xib */,
-			);
-			path = prueba;
-			sourceTree = "<group>";
-		};
 		118ACE8D2407D041002987EE /* Topics */ = {
 			isa = PBXGroup;
 			children = (
-				117CD69D241DD1C800E5F813 /* prueba */,
 				117CD690241DC89C00E5F813 /* CreateTopic */,
 				11A21D78241430C200C8C19A /* DetailUser */,
 				119F81A2240BC92B0035FA18 /* Cell */,
@@ -608,7 +594,6 @@
 				742A18A422DE530B004C544D /* LaunchScreen.storyboard in Resources */,
 				11B1731B240D6DF300CCE753 /* UserSignInViewController.xib in Resources */,
 				115D78DC24067E6C003609F2 /* PantallaInicialViewController.xib in Resources */,
-				117CD6A1241DD1E400E5F813 /* PruebaViewController.xib in Resources */,
 				117CD68B241DB14100E5F813 /* PostCreateViewController.xib in Resources */,
 				1195AD762357EE720056E58F /* SFProDisplay-UltraLight.ttf in Resources */,
 				11A21D7E2414CD9600C8C19A /* DeatilUserViewController.xib in Resources */,
@@ -676,7 +661,6 @@
 				117CD696241DC8D400E5F813 /* CreateTopicViewModel.swift in Sources */,
 				11B1732D240EC07900CCE753 /* ApiErrorResponse.swift in Sources */,
 				119F81A9240BCB310035FA18 /* TopicCell.swift in Sources */,
-				117CD6A0241DD1E400E5F813 /* PruebaViewController.swift in Sources */,
 				1167DED2240A485700E0DDF0 /* PostsViewController.swift in Sources */,
 				11B1731F240E6EB900CCE753 /* UserSignInViewModel.swift in Sources */,
 				1167DEDB240A526800E0DDF0 /* PostsRouter.swift in Sources */,

@@ -12,6 +12,7 @@ import PopupDialog
 class TopicsViewController: UIViewController {
     
     //MARK: - Outlets
+   
     @IBOutlet weak var table: UITableView!
     @IBOutlet weak var butNewTopic: UIButton!
     
@@ -250,7 +251,6 @@ extension TopicsViewController: UITableViewDataSource{
                         cell.configure(title: title, numVisitas: "\(numVisitas)", numComents: "\(numComents)", dateTopic: "\(dateTopicFormater)", avatarUserImage: image )
                         
                         cell.actionBlock = {
-                            print("PULSADO BOTON DEL AVATAR CON LA ID : \(user.username)")
                             self.viewModel.didTapAvatarUser(userName: user.username)
                            
                         }

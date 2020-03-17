@@ -27,7 +27,10 @@ struct PostStream2: Codable {
 // MARK: - Post
 struct Post2: Codable {
     let id: Int
-    let name, username, avatarTemplate, createdAt: String
+    let name: String?
+    let username: String
+    let avatarTemplate: String
+    let createdAt: String
     let cooked: String
     let postNumber, postType: Int
     let updatedAt: String

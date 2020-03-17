@@ -19,10 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
         let vc = PantallaInicialViewController()
-        
-        window?.rootViewController = vc
     
-        
+        window?.rootViewController = vc
         return true
     }
 
