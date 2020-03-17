@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TopicsViewController" customModule="Eh_Ho" customModuleProvider="target">
             <connections>
                 <outlet property="butNewTopic" destination="0CB-eK-LOT" id="qso-b9-GAq"/>
+                <outlet property="search" destination="ZIF-K6-poV" id="psH-32-PMa"/>
                 <outlet property="table" destination="qvu-xq-LOG" id="3he-Wv-9QD"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -21,7 +22,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qvu-xq-LOG">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <rect key="frame" x="0.0" y="100" width="414" height="762"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0CB-eK-LOT" userLabel="ButtonNewTopic">
@@ -31,14 +32,21 @@
                         <action selector="butNewTopic:" destination="-1" eventType="touchUpInside" id="CkO-CI-BSY"/>
                     </connections>
                 </button>
+                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="ZIF-K6-poV">
+                    <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                    <textInputTraits key="textInputTraits"/>
+                </searchBar>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="0CB-eK-LOT" secondAttribute="trailing" constant="20" id="1FS-u5-azC"/>
+                <constraint firstItem="ZIF-K6-poV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="1op-9a-7MS"/>
+                <constraint firstItem="ZIF-K6-poV" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="72q-QT-iDr"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="0CB-eK-LOT" secondAttribute="bottom" constant="50" id="Et4-95-3Ap"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="qvu-xq-LOG" secondAttribute="bottom" id="HfR-gp-xfn"/>
-                <constraint firstItem="qvu-xq-LOG" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Ykp-yK-bsn"/>
+                <constraint firstItem="qvu-xq-LOG" firstAttribute="top" secondItem="ZIF-K6-poV" secondAttribute="bottom" id="nH3-1P-Gta"/>
                 <constraint firstItem="qvu-xq-LOG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="pvX-D4-Znr"/>
+                <constraint firstItem="ZIF-K6-poV" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="yqa-fe-ati"/>
                 <constraint firstItem="qvu-xq-LOG" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="zPD-gD-P5t"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
