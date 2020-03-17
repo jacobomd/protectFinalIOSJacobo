@@ -84,17 +84,13 @@ class PostsViewController: UIViewController {
         let color = UIColor(red: 291/255, green: 99/255, blue: 0/255, alpha: 1.0)
         backItem.tintColor = color
         navigationItem.backBarButtonItem = backItem
-        // Button creation
-        let searchTopic = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-        searchTopic.tintColor = color
-        searchTopic.image = UIImage(named: "temas_Search")
-        
+                
         let createMessag = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(createMessage))
         createMessag.tintColor = color
         createMessag.image = UIImage(named: "message")
         
         // Add button
-        navigationItem.rightBarButtonItems = [searchTopic, createMessag]
+        navigationItem.rightBarButtonItems = [createMessag]
         
         
     }

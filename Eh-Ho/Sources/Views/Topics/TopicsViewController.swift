@@ -10,11 +10,12 @@ import UIKit
 import PopupDialog
 
 class TopicsViewController: UIViewController {
-    
+
     //MARK: - Outlets
    
     @IBOutlet weak var table: UITableView!
     @IBOutlet weak var butNewTopic: UIButton!
+
     
     //MARK: - Propierties
     let viewModel : TopicsViewModel
@@ -24,6 +25,9 @@ class TopicsViewController: UIViewController {
     var listMessagPriv: [TopicMessagePrivateUser] = []
     var detailUser : LoginUser?
     var avartars : String = ""
+    var topicsfiltered : [Topic] = []
+    var searchController: UISearchController!
+    var tableFiltered = UITableViewController()
         
     //MARK: - Inits
     init(viewModel: TopicsViewModel) {
@@ -66,6 +70,10 @@ class TopicsViewController: UIViewController {
         viewModel.viewDidLoad()
         table.refreshControl = refreshControl
         setupUI()
+        tableSettings()
+        createSearchBar()
+        tableFiltered.tableView.tableFooterView = UIView()
+        
     }
     
     
@@ -79,10 +87,6 @@ class TopicsViewController: UIViewController {
         backItem.tintColor = color
         navigationItem.backBarButtonItem = backItem
         
-        let searchTopic = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(displaySearch))
-        searchTopic.tintColor = color
-        searchTopic.image = UIImage(named: "temas_Search")
-        
         let userLogin = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(displayLogin))
         userLogin.tintColor = color
         
@@ -93,7 +97,7 @@ class TopicsViewController: UIViewController {
             self.butNewTopic.isHidden = true
         }
         
-        navigationItem.rightBarButtonItems = [searchTopic, userLogin]
+        navigationItem.rightBarButtonItems = [userLogin]
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: color, NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Light", size: 24)!]
         
     }
@@ -110,12 +114,20 @@ class TopicsViewController: UIViewController {
     @objc func displayLogin () {
         showViewLogin()
     }
+        
+    //MARK: - Privates functions
     
-    @objc func displaySearch () {
-        print("lupa pulsadaaaaaaaaaa")
+    private func tableSettings() {
+        tableFiltered.tableView.delegate = self
+        tableFiltered.tableView.dataSource = self
     }
     
-    //MARK: - Privates functions
+    private func createSearchBar() {
+        self.searchController = UISearchController(searchResultsController: self.tableFiltered)
+        self.table.tableHeaderView = self.searchController.searchBar
+        self.searchController.searchResultsUpdater = self
+    }
+    
     private func  showViewLogin() {
         if Session.loggedSession() {
             showUserLogOutAlert(message: "Do you want to leave the session?")
@@ -218,7 +230,12 @@ class TopicsViewController: UIViewController {
 extension TopicsViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if tableView == self.table {
         return topics.count
+        } else {
+            return topicsfiltered.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -227,18 +244,29 @@ extension TopicsViewController: UITableViewDataSource{
             as? TopicCell else {
                 return UITableViewCell()
         }
+      
+        var title = ""
+        var numVisitas = 0
+        var numComents = 0
+        var dateTopic = ""
+        var posters = topics[0].posters
         
-        idTopics = topics[indexPath.row].id
-        
-        let title = topics[indexPath.row].title
-        let numVisitas = topics[indexPath.row].views
-        let numComents = topics[indexPath.row].postsCount
-        let dateTopic = topics[indexPath.row].createdAt!
+        if tableView == self.table {
+             title = topics[indexPath.row].title
+             numVisitas = topics[indexPath.row].views
+             numComents = topics[indexPath.row].postsCount
+             dateTopic = topics[indexPath.row].createdAt!
+             posters = topics[indexPath.row].posters
+        } else {
+            title = topicsfiltered[indexPath.row].title
+            numVisitas = topicsfiltered[indexPath.row].views
+            numComents = topicsfiltered[indexPath.row].postsCount
+            dateTopic = topicsfiltered[indexPath.row].createdAt!
+            posters = topicsfiltered[indexPath.row].posters
+        }
         
         let dateTopicFormater = convertDateFormater(date: dateTopic)
         
-        
-        let posters = topics[indexPath.row].posters
         for poster in posters {
             if poster.description.starts(with: "Original Poster") {
                 let userPoster = poster.userID
@@ -252,7 +280,7 @@ extension TopicsViewController: UITableViewDataSource{
                         
                         cell.actionBlock = {
                             self.viewModel.didTapAvatarUser(userName: user.username)
-                           
+                            self.searchController.isActive = false
                         }
                     } 
                 }
@@ -265,8 +293,16 @@ extension TopicsViewController: UITableViewDataSource{
 extension TopicsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            let id = topics[indexPath.row].id
+        var id = 0
+        if tableView == self.table {
+             id = topics[indexPath.row].id
             viewModel.didTapInTopic(id: id)
+        } else {
+            id = topicsfiltered[indexPath.row].id
+            viewModel.didTapInTopic(id: id)
+            searchController.isActive = false
+        }
+        
     }
     
 }
@@ -308,6 +344,20 @@ extension TopicsViewController: TopicsViewControllerProtocol {
     func showError(message: String) {
         print("Errorrrrr: \(message)")
     }
+}
+
+extension TopicsViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        self.topicsfiltered = topics.filter { (topic) -> Bool in
+            if topic.title.lowercased().contains(self.searchController.searchBar.text!.lowercased()) {
+                return true
+            } else {
+                return false
+            }
+        }
+        self.tableFiltered.tableView.reloadData()
+    }
+    
 }
 
 
