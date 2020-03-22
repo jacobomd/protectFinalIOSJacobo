@@ -244,17 +244,18 @@ extension TopicsViewController: UITableViewDataSource{
              title = topicsfiltered[indexPath.row].title
              numVisitas = topicsfiltered[indexPath.row].views
              numComents = topicsfiltered[indexPath.row].postsCount
-             dateTopic = topicsfiltered[indexPath.row].createdAt!
+             dateTopic = topicsfiltered[indexPath.row].createdAt
              posters = topicsfiltered[indexPath.row].posters
         } else {
             title = topics[indexPath.row].title
             numVisitas = topics[indexPath.row].views
             numComents = topics[indexPath.row].postsCount
-            dateTopic = topics[indexPath.row].createdAt!
+            dateTopic = topics[indexPath.row].createdAt
             posters = topics[indexPath.row].posters
         }
         
         let dateTopicFormater = convertDateFormater(date: dateTopic)
+        var image : String = ""
         
         for poster in posters {
             if poster.description.starts(with: "Original Poster") {
@@ -263,10 +264,7 @@ extension TopicsViewController: UITableViewDataSource{
                     if userPoster == user.id {
                         let avatar = user.avatarTemplate
                         let avatarFinal = avatar.replacingOccurrences(of: "{size}", with: "64")
-                        let image = "https://mdiscourse.keepcoding.io/\(avatarFinal)"
-                        
-                        cell.configure(title: title, numVisitas: "\(numVisitas)", numComents: "\(numComents)", dateTopic: "\(dateTopicFormater)", avatarUserImage: image )
-                        
+                        image = "https://mdiscourse.keepcoding.io/\(avatarFinal)"
                         cell.actionBlock = {
                             self.viewModel.didTapAvatarUser(userName: user.username)
                         }
@@ -274,6 +272,7 @@ extension TopicsViewController: UITableViewDataSource{
                 }
             }
         }
+        cell.configure(title: title, numVisitas: "\(numVisitas)", numComents: "\(numComents)", dateTopic: "\(dateTopicFormater)", avatarUserImage: image )
         return cell
     }
 }
@@ -300,9 +299,16 @@ protocol TopicsViewControllerProtocol: class {
     func showDetailUser(detailUser: LoginUser)
     func showListMessagPrivUser(listMessagPriv: [TopicMessagePrivateUser])
     func showError (message: String)
+    func shoListTopicDB(topicsDB: [Topic])
 }
 
 extension TopicsViewController: TopicsViewControllerProtocol {
+    
+    func shoListTopicDB(topicsDB: [Topic]) {
+        self.topics = topicsDB
+        table.reloadData()
+    }
+    
     
     func showListMessagPrivUser(listMessagPriv: [TopicMessagePrivateUser]) {
         self.listMessagPriv = listMessagPriv

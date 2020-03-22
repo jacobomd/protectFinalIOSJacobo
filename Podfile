@@ -9,5 +9,5 @@ target 'Eh-Ho' do
   pod 'lottie-ios'
   pod "Strongbox"
   pod 'PopupDialog', '~> 1.1'
-
+  pod 'RealmSwift'
 end

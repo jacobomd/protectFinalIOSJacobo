@@ -166,10 +166,8 @@ extension PostsViewController: UITableViewDataSource {
                 
                 // cell.textLabel?.text = resultado
                 id = posts[indexPath.row].topicID
-                var titulo = posts[indexPath.row].topicSlug
-                
-                titulo = titulo.replacingOccurrences(of: "-", with: " ", options: NSString.CompareOptions.literal, range: nil).capitalizingFirstLetter()
-                
+ 
+            
                 let userName = posts[indexPath.row].username
                 let descripcion = resultado
                 //let avatar = posts[indexPath.row].avatarTemplate

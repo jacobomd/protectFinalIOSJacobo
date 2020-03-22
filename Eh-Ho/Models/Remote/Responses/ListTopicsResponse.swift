@@ -52,43 +52,58 @@ struct TopicList: Codable {
 // MARK: - Topic
 struct Topic: Codable {
     let id: Int
-    let title, fancyTitle, slug: String
-    let postsCount, replyCount, highestPostNumber: Int
-    let imageURL: String?
-    let createdAt: String?
-    let lastPostedAt: String?
-    let bumped: Bool
-    let bumpedAt: String?
-    let unseen, pinned: Bool
-    let excerpt: String?
-    let visible, closed, archived: Bool
-    let views, likeCount: Int
-    let hasSummary: Bool
-    let archetype, lastPosterUsername: String?
-    let categoryID: Int
-    let pinnedGlobally: Bool
+    let title: String
+//    let fancyTitle: String
+//    let slug: String
+    let postsCount: Int
+//    let replyCount: Int
+//    let highestPostNumber: Int
+//    let imageURL: String?
+    let createdAt: String
+    let lastPostedAt: String
+//    let bumped: Bool?
+//    let bumpedAt: String?
+//    let unseen, pinned: Bool?
+//    let excerpt: String?
+//    let visible: Bool
+//    let closed: Bool
+//    let archived: Bool
+    let views: Int
+//    let likeCount: Int
+//    let hasSummary: Bool
+//    let archetype: String
+//    let lastPosterUsername: String
+//    let categoryID: Int?
+//    let pinnedGlobally: Bool?
     let posters: [Poster]
 
     
     enum CodingKeys: String, CodingKey {
-        case id, title
-        case fancyTitle = "fancy_title"
-        case slug
+        case id
+        case title
+//        case fancyTitle = "fancy_title"
+//        case slug
         case postsCount = "posts_count"
-        case replyCount = "reply_count"
-        case highestPostNumber = "highest_post_number"
-        case imageURL = "image_url"
+//        case replyCount = "reply_count"
+//        case highestPostNumber = "highest_post_number"
+//        case imageURL = "image_url"
         case createdAt = "created_at"
         case lastPostedAt = "last_posted_at"
-        case bumped
-        case bumpedAt = "bumped_at"
-        case unseen, pinned, excerpt, visible, closed, archived, views
-        case likeCount = "like_count"
-        case hasSummary = "has_summary"
-        case archetype
-        case lastPosterUsername = "last_poster_username"
-        case categoryID = "category_id"
-        case pinnedGlobally = "pinned_globally"
+//        case bumped
+//        case bumpedAt = "bumped_at"
+//        case unseen
+//        case pinned
+//        case excerpt
+//        case visible
+//        case closed
+//        case archived
+        case views
+//        case likeCount = "like_count"
+//        case hasSummary = "has_summary"
+//        case archetype
+//        case lastPosterUsername = "last_poster_username"
+//        case categoryID = "category_id"
+//        case pinnedGlobally = "pinned_globally"
         case posters = "posters"
 
     }
@@ -96,16 +111,16 @@ struct Topic: Codable {
 
 // MARK: - Poster
 struct Poster: Codable {
-    let extras: String?
+   // let extras: String?
     let description: String
     let userID: Int
-    let primary_group_id: Int?
+   // let primary_group_id: Int?
     
     enum CodingKeys: String, CodingKey {
-        case extras = "extras"
+        //case extras = "extras"
         case description = "description"
         case userID = "user_id"
-        case primary_group_id = "primary_group_id"
+       // case primary_group_id = "primary_group_id"
     }
 }
 

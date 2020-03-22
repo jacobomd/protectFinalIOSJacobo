@@ -9,7 +9,7 @@
 import Foundation
 
 class TopicsRepositoryImpl: TopicsRepository {
-   
+
     let session: SessionAPI
     
     init(session: SessionAPI) {
@@ -47,6 +47,13 @@ class TopicsRepositoryImpl: TopicsRepository {
     
     func createNewTopic(title: String, raw: String, completion: @escaping (Result<AddNewTopicResponse, ApiErrorResponse>) -> ()) {
         let request = CreateTopicRequest(title: title, raw: raw)
+        session.send(request: request) { (result) in
+            completion(result)
+        }
+    }
+    
+    func getListPosts(completion: @escaping (Result<ListPostsResponse, ApiErrorResponse>) -> ()) {
+        let request = ListPostsRequest()
         session.send(request: request) { (result) in
             completion(result)
         }

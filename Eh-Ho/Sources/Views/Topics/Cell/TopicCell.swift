@@ -44,12 +44,18 @@ class TopicCell: UITableViewCell {
     
     private func loadImage(with imagePath: String) {
         DispatchQueue.global().async { [weak self] in
-            let url = URL(string: imagePath)
-           let data = try? Data(contentsOf: url!)
-           DispatchQueue.main.async {
-            self?.buttonAvatar.setImage(UIImage(data: data!), for: .normal)
-
-           }
+            if imagePath.isEmpty || !CheckInternet.Connection() {
+                DispatchQueue.main.async {
+                    self?.buttonAvatar.setImage(UIImage(named: "imagen?"), for: .normal)
+                }
+            } else {
+                let url = URL(string: imagePath)
+                let data = try? Data(contentsOf: url!)
+                DispatchQueue.main.async {
+                    self?.buttonAvatar.setImage(UIImage(data: data!), for: .normal)
+                    
+                }
+            }
         }
     }
     

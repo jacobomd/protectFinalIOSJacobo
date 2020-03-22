@@ -21,6 +21,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let vc = PantallaInicialViewController()
     
         window?.rootViewController = vc
+        
+        let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        print(urls[urls.count-1] as URL)
+        
         return true
     }
 

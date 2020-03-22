@@ -14,6 +14,7 @@ class PostViewModel {
     let router: PostRouter
     let id: Int
     let postsRepository: PostsRepository
+    private let realmDataManager = RealmDataManager()
  
     //MARK: - Inits
     init(router: PostRouter, id: Int, postsRepository: PostsRepository) {
@@ -34,6 +35,7 @@ class PostViewModel {
     
     //MARK: - Private functions
     private func fetchListPostssByTopic () {
+        if CheckInternet.Connection() {
             postsRepository.getListPostssByTopic(id: id) { [weak self] result in
                 switch result {
                 case .success(let value):
@@ -42,5 +44,9 @@ class PostViewModel {
                     self?.view?.showError(with: "Error")
                 }
             }
+        } else {
+            let listPost = self.realmDataManager.loadPostsByTopic(id: id)
+            self.view?.showListPostssByTopic(posts: listPost)
+        }
     }
 }

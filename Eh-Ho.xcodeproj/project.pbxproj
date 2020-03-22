@@ -7,10 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		114BAE722427E99600FBD4E2 /* ListPostsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114BAE712427E99600FBD4E2 /* ListPostsResponse.swift */; };
+		114BAE742427EC7100FBD4E2 /* ListPostsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114BAE732427EC7100FBD4E2 /* ListPostsRequest.swift */; };
+		114BAE762427F0C400FBD4E2 /* PosterDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114BAE752427F0C400FBD4E2 /* PosterDB.swift */; };
 		114F68562416B87C00B1A6D9 /* ListMessagPrivUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114F68552416B87C00B1A6D9 /* ListMessagPrivUserResponse.swift */; };
 		114F68582416BB3B00B1A6D9 /* ListMessagPrivUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114F68572416BB3B00B1A6D9 /* ListMessagPrivUserRequest.swift */; };
 		114F685A2417077000B1A6D9 /* PasswordResetResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114F68592417077000B1A6D9 /* PasswordResetResponse.swift */; };
 		114F685C241707F200B1A6D9 /* PasswordResetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114F685B241707F200B1A6D9 /* PasswordResetRequest.swift */; };
+		1152BC7024263A37005930FE /* TopicDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1152BC6F24263A37005930FE /* TopicDB.swift */; };
+		1152BC7224263F21005930FE /* RealmDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1152BC7124263F21005930FE /* RealmDataManager.swift */; };
+		1152BC742426AA2C005930FE /* CheckInternet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1152BC732426AA2C005930FE /* CheckInternet.swift */; };
 		115D78DB24067E6C003609F2 /* PantallaInicialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115D78D924067E6C003609F2 /* PantallaInicialViewController.swift */; };
 		115D78DC24067E6C003609F2 /* PantallaInicialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 115D78DA24067E6C003609F2 /* PantallaInicialViewController.xib */; };
 		1167DED2240A485700E0DDF0 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1167DED0240A485700E0DDF0 /* PostsViewController.swift */; };
@@ -77,10 +83,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		114BAE712427E99600FBD4E2 /* ListPostsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPostsResponse.swift; sourceTree = "<group>"; };
+		114BAE732427EC7100FBD4E2 /* ListPostsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPostsRequest.swift; sourceTree = "<group>"; };
+		114BAE752427F0C400FBD4E2 /* PosterDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterDB.swift; sourceTree = "<group>"; };
 		114F68552416B87C00B1A6D9 /* ListMessagPrivUserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMessagPrivUserResponse.swift; sourceTree = "<group>"; };
 		114F68572416BB3B00B1A6D9 /* ListMessagPrivUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMessagPrivUserRequest.swift; sourceTree = "<group>"; };
 		114F68592417077000B1A6D9 /* PasswordResetResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetResponse.swift; sourceTree = "<group>"; };
 		114F685B241707F200B1A6D9 /* PasswordResetRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetRequest.swift; sourceTree = "<group>"; };
+		1152BC6F24263A37005930FE /* TopicDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicDB.swift; sourceTree = "<group>"; };
+		1152BC7124263F21005930FE /* RealmDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDataManager.swift; sourceTree = "<group>"; };
+		1152BC732426AA2C005930FE /* CheckInternet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInternet.swift; sourceTree = "<group>"; };
 		115D78D924067E6C003609F2 /* PantallaInicialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantallaInicialViewController.swift; sourceTree = "<group>"; };
 		115D78DA24067E6C003609F2 /* PantallaInicialViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PantallaInicialViewController.xib; sourceTree = "<group>"; };
 		1167DED0240A485700E0DDF0 /* PostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
@@ -174,6 +186,7 @@
 				117CD681241D5B9B00E5F813 /* ListPostsByTopicRequest.swift */,
 				117CD685241DB02E00E5F813 /* CreatePostRequest.swift */,
 				117CD69B241DC9D700E5F813 /* CreateTopicRequest.swift */,
+				114BAE732427EC7100FBD4E2 /* ListPostsRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -187,17 +200,9 @@
 			path = Api;
 			sourceTree = "<group>";
 		};
-		115D78D624067BD6003609F2 /* DefaultPreferences */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = DefaultPreferences;
-			sourceTree = "<group>";
-		};
 		115D78D724067C57003609F2 /* Database */ = {
 			isa = PBXGroup;
 			children = (
-				11BA519223314BB8007A137B /* CoreData */,
 				11BA519123314BA5007A137B /* DataManager */,
 			);
 			path = Database;
@@ -332,22 +337,15 @@
 		11BA519123314BA5007A137B /* DataManager */ = {
 			isa = PBXGroup;
 			children = (
+				1152BC7124263F21005930FE /* RealmDataManager.swift */,
 			);
 			path = DataManager;
-			sourceTree = "<group>";
-		};
-		11BA519223314BB8007A137B /* CoreData */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CoreData;
 			sourceTree = "<group>";
 		};
 		11D4AE6823300EB400C21C2C /* Local */ = {
 			isa = PBXGroup;
 			children = (
 				115D78D724067C57003609F2 /* Database */,
-				115D78D624067BD6003609F2 /* DefaultPreferences */,
 				11D4AE69233014E900C21C2C /* Models */,
 			);
 			path = Local;
@@ -356,6 +354,8 @@
 		11D4AE69233014E900C21C2C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1152BC6F24263A37005930FE /* TopicDB.swift */,
+				114BAE752427F0C400FBD4E2 /* PosterDB.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -507,6 +507,7 @@
 				117CD67F241D5B5700E5F813 /* ListPostsByTopicResponse.swift */,
 				117CD683241DAF4A00E5F813 /* AddNewPostResponse.swift */,
 				117CD699241DC99D00E5F813 /* AddNewTopicResponse.swift */,
+				114BAE712427E99600FBD4E2 /* ListPostsResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -515,6 +516,7 @@
 			isa = PBXGroup;
 			children = (
 				1191FD5F2410220100EDD855 /* CheckSession.swift */,
+				1152BC732426AA2C005930FE /* CheckInternet.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -670,6 +672,7 @@
 				117CD69A241DC99D00E5F813 /* AddNewTopicResponse.swift in Sources */,
 				11A21D7D2414CD9600C8C19A /* DeatilUserViewController.swift in Sources */,
 				11B17325240E853600CCE753 /* LoginSignUpRepository.swift in Sources */,
+				114BAE762427F0C400FBD4E2 /* PosterDB.swift in Sources */,
 				11B1732B240E88A700CCE753 /* UserSignUpRequest.swift in Sources */,
 				742A189A22DE5309004C544D /* AppDelegate.swift in Sources */,
 				117CD67E241D5AC400E5F813 /* PostRepositoryImpl.swift in Sources */,
@@ -684,11 +687,14 @@
 				11B17327240E855E00CCE753 /* LoginSignUpRepositoryImpl.swift in Sources */,
 				742A18BE22DE620C004C544D /* APIClient.swift in Sources */,
 				117CD69C241DC9D700E5F813 /* CreateTopicRequest.swift in Sources */,
+				1152BC7224263F21005930FE /* RealmDataManager.swift in Sources */,
 				117CD679241D578300E5F813 /* PostCell.swift in Sources */,
 				11B1731D240E6EA000CCE753 /* UserSignInRouter.swift in Sources */,
 				114F685C241707F200B1A6D9 /* PasswordResetRequest.swift in Sources */,
+				1152BC7024263A37005930FE /* TopicDB.swift in Sources */,
 				1167DED9240A525900E0DDF0 /* PostsViewModel.swift in Sources */,
 				117CD682241D5B9B00E5F813 /* ListPostsByTopicRequest.swift in Sources */,
+				1152BC742426AA2C005930FE /* CheckInternet.swift in Sources */,
 				11B17302240D03E600CCE753 /* TopicsRepositoryImpl.swift in Sources */,
 				1191FD5E240FD66E00EDD855 /* UserSignInResponse.swift in Sources */,
 				1167DED5240A49E600E0DDF0 /* TopicsViewModel.swift in Sources */,
@@ -698,11 +704,13 @@
 				1191FD5A240FCCB200EDD855 /* UserSignInRequest.swift in Sources */,
 				1191FD602410220100EDD855 /* CheckSession.swift in Sources */,
 				118ACE902407D068002987EE /* TopicsViewController.swift in Sources */,
+				114BAE742427EC7100FBD4E2 /* ListPostsRequest.swift in Sources */,
 				117CD684241DAF4A00E5F813 /* AddNewPostResponse.swift in Sources */,
 				115D78DB24067E6C003609F2 /* PantallaInicialViewController.swift in Sources */,
 				11A21D75241399E200C8C19A /* SingleTopicResponse.swift in Sources */,
 				117CD6A4241DD33900E5F813 /* CreateTopicViewController.swift in Sources */,
 				11B17329240E86C300CCE753 /* UserSignUpResponse.swift in Sources */,
+				114BAE722427E99600FBD4E2 /* ListPostsResponse.swift in Sources */,
 				117CD686241DB02E00E5F813 /* CreatePostRequest.swift in Sources */,
 				117CD680241D5B5700E5F813 /* ListPostsByTopicResponse.swift in Sources */,
 			);

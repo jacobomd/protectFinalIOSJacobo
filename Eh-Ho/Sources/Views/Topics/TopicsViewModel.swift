@@ -14,7 +14,7 @@ class TopicsViewModel {
     weak var view : TopicsViewControllerProtocol?
     let router : TopicsRouter
     let topicRepository: TopicsRepository
-    
+    private let realmDataManager = RealmDataManager()
     
     //MARK: - Inits
     init(router: TopicsRouter, topicRepository: TopicsRepository) {
@@ -25,6 +25,7 @@ class TopicsViewModel {
     //MARK: - Public functions
     func viewDidLoad () {
         fetchListTopics()
+        fetchListPosts()
     }
     
     func didTapAvatarUser(userName: String) {
@@ -45,14 +46,33 @@ class TopicsViewModel {
     //MARK: - Private functions
     private func fetchListTopics () {
         
-        topicRepository.getListTopic { [weak self] (result) in
+        if CheckInternet.Connection() {
+            topicRepository.getListTopic { [weak self] (result) in
+                switch result {
+                case .success(let value):
+                    // successss
+                    self?.view?.showListTopics(topics: value.topicList.topics, users: value.users)
+                    self?.realmDataManager.saveTopics(topicDB: value.topicList.topics)
+                case .failure(let error):
+                    // error
+                    self?.view?.showError(message: error.errors.joined(separator: ","))
+                }
+            }
+        } else {
+            let topicsDB = self.realmDataManager.loadTopics()
+            self.view?.shoListTopicDB(topicsDB: topicsDB)
+        }
+    }
+    
+    private func fetchListPosts() {
+        topicRepository.getListPosts { [weak self] (result) in
             switch result {
             case .success(let value):
-                // successss
-                self?.view?.showListTopics(topics: value.topicList.topics, users: value.users)
-            case .failure(let error):
+                // success
+                self?.realmDataManager.savePosts(postDB: value.latestPosts)
+            case.failure(let error):
                 // error
-                self?.view?.showError(message: error.localizedDescription)
+                self?.view?.showError(message: error.errors.joined(separator: ","))
             }
         }
     }
