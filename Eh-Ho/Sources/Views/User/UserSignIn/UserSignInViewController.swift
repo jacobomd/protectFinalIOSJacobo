@@ -41,9 +41,13 @@ class UserSignInViewController: UIViewController {
         self.navigationController?.pushViewController(UserSignUpRouter.configureModule(), animated: true)
     }
     @IBAction func butSignIn(_ sender: Any) {
+        if CheckInternet.Connection() {
         guard let userName = txtUserName.text,
             let password = txtPassword.text else {return}
         viewModel.didTapInSignIn(userName: userName, password: password)
+        } else {
+            showSignInAlert(message: "You need to have an internet connection to carry out the action")
+        }
     }
     
     @IBAction func butPasswReset(_ sender: Any) {
@@ -66,6 +70,19 @@ class UserSignInViewController: UIViewController {
     }
     
     //MARK: - Private functions
+    
+    private func showSignInAlert(message: String)  {
+        //Create the alert
+        let alert = UIAlertController(title: message, message: nil, preferredStyle: .alert)
+        
+        //Creamos la accion
+        let action = UIAlertAction(title: "ok", style: .default, handler: nil)
+        
+        //Aañadimos a la alerta
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     private func showPasswResetAlert()  {
         //Create the alert
         let alert = UIAlertController(title: "Enter your username or email, and we'll send you a password reset email", message: nil, preferredStyle: .alert)

@@ -37,7 +37,7 @@ class RealmDataManager {
     }
     
     // Guardar todos los posts
-    func savePosts(postDB: [LatestPost]) {
+    func savePosts(postDB: [Post2]) {
         for post in postDB {
             try! realm.write {
                 realm.add(postDataDB(from: post), update: .all)
@@ -45,7 +45,7 @@ class RealmDataManager {
         }
     }
     
-    private func postDataDB(from postData: LatestPost) -> PosterDB {
+    private func postDataDB(from postData: Post2) -> PosterDB {
         return PosterDB(id: postData.id,
                         username: postData.username,
                         cooked: postData.cooked,

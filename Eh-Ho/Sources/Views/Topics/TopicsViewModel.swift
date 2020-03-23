@@ -14,18 +14,19 @@ class TopicsViewModel {
     weak var view : TopicsViewControllerProtocol?
     let router : TopicsRouter
     let topicRepository: TopicsRepository
+    let postsRepository: PostsRepository
     private let realmDataManager = RealmDataManager()
     
     //MARK: - Inits
-    init(router: TopicsRouter, topicRepository: TopicsRepository) {
+    init(router: TopicsRouter, topicRepository: TopicsRepository, postsRepository: PostsRepository) {
         self.router = router
         self.topicRepository = topicRepository
+        self.postsRepository = postsRepository
     }
     
     //MARK: - Public functions
     func viewDidLoad () {
         fetchListTopics()
-        fetchListPosts()
     }
     
     func didTapAvatarUser(userName: String) {
@@ -44,6 +45,7 @@ class TopicsViewModel {
     }
     
     //MARK: - Private functions
+    
     private func fetchListTopics () {
         
         if CheckInternet.Connection() {
@@ -53,6 +55,10 @@ class TopicsViewModel {
                     // successss
                     self?.view?.showListTopics(topics: value.topicList.topics, users: value.users)
                     self?.realmDataManager.saveTopics(topicDB: value.topicList.topics)
+                    let topicList = value.topicList.topics
+                    for topic in topicList {
+                        self?.fetchListPostssByTopic(id: topic.id)
+                    }
                 case .failure(let error):
                     // error
                     self?.view?.showError(message: error.errors.joined(separator: ","))
@@ -64,19 +70,17 @@ class TopicsViewModel {
         }
     }
     
-    private func fetchListPosts() {
-        topicRepository.getListPosts { [weak self] (result) in
-            switch result {
-            case .success(let value):
-                // success
-                self?.realmDataManager.savePosts(postDB: value.latestPosts)
-            case.failure(let error):
-                // error
-                self?.view?.showError(message: error.errors.joined(separator: ","))
+    private func fetchListPostssByTopic (id: Int) {
+            postsRepository.getListPostssByTopic(id: id) { [weak self] result in
+                switch result {
+                case .success(let value):
+                    self?.realmDataManager.savePosts(postDB: value.postStream.posts)
+                case .failure(let error):
+                    self?.view?.showError(message: error.errors.joined(separator: ","))
+                }
             }
-        }
     }
-    
+        
     private func fetchSingleTopic(topic : Topic) {
         topicRepository.getSingleTopicById(id: topic.id) { result in
                 switch result {

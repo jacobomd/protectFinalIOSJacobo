@@ -102,18 +102,30 @@ class TopicsViewController: UIViewController {
     
     //MARK: - Navigations
     @IBAction func butNewTopic(_ sender: Any) {
+        if CheckInternet.Connection() {
         viewModel.didTapInCreateTopic()
+        } else {
+            showCreateTopicAlert(message: "You need to have an internet connection to carry out the action")
+        }
     }
-    
- //   @IBAction func buttonAddTopic(_ sender: Any) {
-  //      viewModel.didTapInCreateTopic()
-  //  }
     
     @objc func displayLogin () {
         showViewLogin()
     }
         
     //MARK: - Privates functions
+    
+    private func showCreateTopicAlert(message: String)  {
+        //Create the alert
+        let alert = UIAlertController(title: message, message: nil, preferredStyle: .alert)
+        
+        //Creamos la accion
+        let action = UIAlertAction(title: "ok", style: .default, handler: nil)
+        
+        //Aañadimos a la alerta
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
+    }
     
     private func tableSettings() {
         search.delegate = self
@@ -137,7 +149,7 @@ class TopicsViewController: UIViewController {
             Session.logOutSession()
             DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: {
                 self.removeSpinner()
-                self.navigationItem.rightBarButtonItems?[1].image = UIImage(named: "tabBar_usuarioOn")
+                self.navigationItem.rightBarButtonItem?.image = UIImage(named: "tabBar_usuarioOn")
                 self.butNewTopic.isHidden = true
             })
             
@@ -150,9 +162,7 @@ class TopicsViewController: UIViewController {
 
         // Create a custom view controller
         let detailUserVC = DeatilUserViewController(nibName: "DeatilUserViewController", bundle: nil)
-          
 
-        
         // Create the dialog
         let popup = PopupDialog(viewController: detailUserVC,
                                 buttonAlignment: .horizontal,

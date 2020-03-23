@@ -96,10 +96,15 @@ class PostsViewController: UIViewController {
     }
     
     @objc func createMessage() {
-        if Session.loggedSession() {
-            viewModel.didTapInTopic(id: self.id)
+        
+        if CheckInternet.Connection() {
+            if Session.loggedSession() {
+                viewModel.didTapInTopic(id: self.id)
+            } else {
+                showCreatePostAlert(message: "You have to be logged in to perform this action")
+            }
         } else {
-            showCreatePostAlert(message: "You have to be logged in to perform this action")
+            showCreatePostAlert(message: "You need to have an internet connection to carry out the action")
         }
     }
     
