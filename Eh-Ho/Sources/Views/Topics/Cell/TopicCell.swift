@@ -59,4 +59,8 @@ class TopicCell: UITableViewCell {
         }
     }
     
+    static func estimateRowHeight() -> CGFloat {
+        return 120.0
+    }
+    
 }
