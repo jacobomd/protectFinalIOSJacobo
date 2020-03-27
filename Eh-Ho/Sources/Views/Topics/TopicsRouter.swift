@@ -16,10 +16,9 @@ class TopicsRouter {
         
         let sessionApi = SessionAPI()
         let topicRepository = TopicsRepositoryImpl(session: sessionApi)
-        let postsRepository = PostRepositoryImpl(session: sessionApi)
-        
+    
         let router = TopicsRouter()
-        let viewModel = TopicsViewModel(router: router, topicRepository: topicRepository, postsRepository: postsRepository)
+        let viewModel = TopicsViewModel(router: router, topicRepository: topicRepository)
         let viewController = TopicsViewController(viewModel: viewModel)
         
         viewModel.view = viewController

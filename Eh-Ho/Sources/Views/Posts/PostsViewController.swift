@@ -80,7 +80,7 @@ class PostsViewController: UIViewController {
     func setupUI() {
         
         let backItem = UIBarButtonItem()
-        backItem.title = "Volver"
+        backItem.title = "posts"
         let colorOrange = UIColor.systemOrange
         let colorBlack = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1.0)
         backItem.tintColor = colorBlack

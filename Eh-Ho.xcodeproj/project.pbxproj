@@ -72,6 +72,8 @@
 		11B17329240E86C300CCE753 /* UserSignUpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B17328240E86C300CCE753 /* UserSignUpResponse.swift */; };
 		11B1732B240E88A700CCE753 /* UserSignUpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B1732A240E88A700CCE753 /* UserSignUpRequest.swift */; };
 		11B1732D240EC07900CCE753 /* ApiErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B1732C240EC07900CCE753 /* ApiErrorResponse.swift */; };
+		11DCF0CD242E685E00341CA6 /* ListPostsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DCF0CC242E685E00341CA6 /* ListPostsResponse.swift */; };
+		11DCF0CF242E687C00341CA6 /* ListPostsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DCF0CE242E687C00341CA6 /* ListPostsRequest.swift */; };
 		742A189A22DE5309004C544D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742A189922DE5309004C544D /* AppDelegate.swift */; };
 		742A18A122DE530B004C544D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 742A18A022DE530B004C544D /* Assets.xcassets */; };
 		742A18A422DE530B004C544D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 742A18A222DE530B004C544D /* LaunchScreen.storyboard */; };
@@ -146,6 +148,8 @@
 		11B17328240E86C300CCE753 /* UserSignUpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignUpResponse.swift; sourceTree = "<group>"; };
 		11B1732A240E88A700CCE753 /* UserSignUpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSignUpRequest.swift; sourceTree = "<group>"; };
 		11B1732C240EC07900CCE753 /* ApiErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiErrorResponse.swift; sourceTree = "<group>"; };
+		11DCF0CC242E685E00341CA6 /* ListPostsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPostsResponse.swift; sourceTree = "<group>"; };
+		11DCF0CE242E687C00341CA6 /* ListPostsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPostsRequest.swift; sourceTree = "<group>"; };
 		24F2F79E53B60DBDD866CC1A /* Pods_Eh_Ho.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Eh_Ho.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		742A189622DE5309004C544D /* Eh-Ho.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Eh-Ho.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		742A189922DE5309004C544D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -182,6 +186,7 @@
 				117CD681241D5B9B00E5F813 /* ListPostsByTopicRequest.swift */,
 				117CD685241DB02E00E5F813 /* CreatePostRequest.swift */,
 				117CD69B241DC9D700E5F813 /* CreateTopicRequest.swift */,
+				11DCF0CE242E687C00341CA6 /* ListPostsRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -502,6 +507,7 @@
 				117CD67F241D5B5700E5F813 /* ListPostsByTopicResponse.swift */,
 				117CD683241DAF4A00E5F813 /* AddNewPostResponse.swift */,
 				117CD699241DC99D00E5F813 /* AddNewTopicResponse.swift */,
+				11DCF0CC242E685E00341CA6 /* ListPostsResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -672,6 +678,7 @@
 				117CD67E241D5AC400E5F813 /* PostRepositoryImpl.swift in Sources */,
 				11A21D7724139A2600C8C19A /* SingleTopicRequest.swift in Sources */,
 				11B1731A240D6DF300CCE753 /* UserSignInViewController.swift in Sources */,
+				11DCF0CD242E685E00341CA6 /* ListPostsResponse.swift in Sources */,
 				114F685A2417077000B1A6D9 /* PasswordResetResponse.swift in Sources */,
 				117CD68A241DB14100E5F813 /* PostCreateViewController.swift in Sources */,
 				114F68562416B87C00B1A6D9 /* ListMessagPrivUserResponse.swift in Sources */,
@@ -704,6 +711,7 @@
 				117CD6A4241DD33900E5F813 /* CreateTopicViewController.swift in Sources */,
 				11B17329240E86C300CCE753 /* UserSignUpResponse.swift in Sources */,
 				117CD686241DB02E00E5F813 /* CreatePostRequest.swift in Sources */,
+				11DCF0CF242E687C00341CA6 /* ListPostsRequest.swift in Sources */,
 				117CD680241D5B5700E5F813 /* ListPostsByTopicResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

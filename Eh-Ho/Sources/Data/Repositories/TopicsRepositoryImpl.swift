@@ -52,4 +52,11 @@ class TopicsRepositoryImpl: TopicsRepository {
         }
     }
     
+    func getListPosts(completion: @escaping (Result<ListPostsResponse, ApiErrorResponse>) -> ()) {
+        let request = ListPostsRequest()
+        session.send(request: request) { (result) in
+            completion(result)
+        }
+    }
+    
 }

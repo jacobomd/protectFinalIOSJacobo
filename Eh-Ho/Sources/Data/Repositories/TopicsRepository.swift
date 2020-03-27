@@ -19,4 +19,5 @@ protocol TopicsRepository {
     
     func createNewTopic(title: String, raw: String, completion: @escaping(Result<AddNewTopicResponse, ApiErrorResponse>) -> ())
     
+    func getListPosts(completion: @escaping(Result<ListPostsResponse, ApiErrorResponse>) -> ())
 }
