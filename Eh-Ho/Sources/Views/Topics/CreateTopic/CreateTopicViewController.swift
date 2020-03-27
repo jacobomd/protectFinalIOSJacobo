@@ -31,14 +31,28 @@ class CreateTopicViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        txtTitle.placeholder = "Insert a title"
-        txtDescription.placeholder = "Insert a description ..."
-
-        //self.title = "Crear topics"
+        setUI()
+        self.title = "Create topic"
     }
-
-
-    @IBAction func butCrear(_ sender: Any) {
+    
+    private func setUI() {
+        let backItem = UIBarButtonItem()
+        backItem.title = "Volver"
+        
+        let colorOrange = UIColor.systemOrange
+        let colorBlack = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1.0)
+        backItem.tintColor = colorBlack
+        navigationItem.backBarButtonItem = backItem
+        navigationController?.navigationBar.barTintColor = colorOrange
+        let createdNewPost = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(addNewPost))
+        createdNewPost.tintColor = colorBlack
+        createdNewPost.image = UIImage(named: "navigation")
+        
+        // Add button
+        navigationItem.rightBarButtonItems = [createdNewPost]
+    }
+    
+    @objc func addNewPost() {
         textTitle = txtTitle.text
         textDescription = txtDescription.text
         
@@ -52,7 +66,7 @@ class CreateTopicViewController: UIViewController {
             txtDescription.text = ""
         }
     }
-    
+
 }
 
 //MARK: - VIEWMODEL COMMUNICATION

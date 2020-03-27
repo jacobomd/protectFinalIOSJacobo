@@ -52,8 +52,13 @@ class UserSignInViewModel {
         signInRepository.passwordReset(login: login) {
             [weak self] result in
             switch result {
-            case .success( _):
-                self?.view?.showPasswReset(login: login)
+            case .success(let value):
+                if value.userFound == false {
+                    self?.view?.showPasswReset(valueResult: value.result ?? "Incorrect username or mail.")
+                } else {
+                self?.view?.showPasswReset(valueResult: "We found an account that matches the username \(login), you should receive an mail with instructions on how to reset your password shorty.")
+                }
+                
             case .failure(let error):
                 self?.view?.showErrorUserLogged(error: error.errors.joined(separator: ","))
             }

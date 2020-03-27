@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,51 +26,46 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_Triangulo" translatesAutoresizingMaskIntoConstraints="NO" id="MBs-hq-isJ">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 </imageView>
-                <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="fillProportionally" spacing="38" translatesAutoresizingMaskIntoConstraints="NO" id="qI3-iG-HCa">
-                    <rect key="frame" x="10" y="150" width="394" height="346"/>
-                    <subviews>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jfw-0C-G4C">
-                            <rect key="frame" x="0.0" y="0.0" width="394" height="67.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </textField>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cdQ-ea-g0M" userLabel="Textfield Descripcion">
-                            <rect key="frame" x="0.0" y="105.5" width="394" height="100"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="100" id="yik-pH-9ai"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </textField>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HCa-Dq-2GF">
-                            <rect key="frame" x="0.0" y="243.5" width="394" height="102.5"/>
-                            <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <state key="normal" title="Crear"/>
-                            <connections>
-                                <action selector="butCrear:" destination="-1" eventType="touchUpInside" id="QPS-Tz-1oN"/>
-                            </connections>
-                        </button>
-                    </subviews>
-                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                </stackView>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add a title ..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jfw-0C-G4C">
+                    <rect key="frame" x="16" y="94" width="382" height="50"/>
+                    <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="04M-oT-sbN"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="zEm-xi-lVw">
-                    <rect key="frame" x="85.5" y="571" width="243" height="65"/>
+                    <rect key="frame" x="85.5" y="415.5" width="243" height="65"/>
                 </imageView>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add a content ..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cdQ-ea-g0M" userLabel="Textfield Descripcion">
+                    <rect key="frame" x="16" y="160" width="382" height="120"/>
+                    <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="120" id="lea-ab-Aaf"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="Jfw-0C-G4C" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="21x-vM-6Xj"/>
                 <constraint firstAttribute="trailing" secondItem="MBs-hq-isJ" secondAttribute="trailing" id="2FV-GC-SXN"/>
-                <constraint firstItem="zEm-xi-lVw" firstAttribute="top" secondItem="qI3-iG-HCa" secondAttribute="bottom" constant="75" id="Aw8-aE-9Zh"/>
-                <constraint firstItem="qI3-iG-HCa" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="150" id="NV9-yZ-JaR"/>
-                <constraint firstAttribute="bottom" secondItem="qI3-iG-HCa" secondAttribute="bottom" constant="400" id="PfC-bF-oL7"/>
+                <constraint firstItem="Jfw-0C-G4C" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="4Pn-RI-338"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="cdQ-ea-g0M" secondAttribute="trailing" constant="16" id="Lhb-RH-plh"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Jfw-0C-G4C" secondAttribute="trailing" constant="16" id="R3G-Zf-gl6"/>
                 <constraint firstItem="0Le-5e-9W6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Ryg-dT-6es"/>
                 <constraint firstItem="MBs-hq-isJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="TEj-LZ-0vp"/>
                 <constraint firstAttribute="trailing" secondItem="0Le-5e-9W6" secondAttribute="trailing" id="WP5-ua-wNg"/>
-                <constraint firstItem="zEm-xi-lVw" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="bHl-nj-s2R"/>
-                <constraint firstAttribute="trailing" secondItem="qI3-iG-HCa" secondAttribute="trailing" constant="10" id="fd9-pT-Z8h"/>
+                <constraint firstItem="cdQ-ea-g0M" firstAttribute="top" secondItem="Jfw-0C-G4C" secondAttribute="bottom" constant="16" id="X9t-Y1-rng"/>
+                <constraint firstItem="Jfw-0C-G4C" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="Y7P-nB-d9f"/>
+                <constraint firstItem="zEm-xi-lVw" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="cBF-dy-fcp"/>
+                <constraint firstItem="cdQ-ea-g0M" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="eQz-ul-hHu"/>
                 <constraint firstItem="zEm-xi-lVw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="85.5" id="jXJ-c6-Mh4"/>
-                <constraint firstItem="qI3-iG-HCa" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="k6w-rq-rZU"/>
+                <constraint firstItem="zEm-xi-lVw" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="l0t-NX-UU2"/>
                 <constraint firstAttribute="bottom" secondItem="MBs-hq-isJ" secondAttribute="bottom" id="l38-Ro-KPO"/>
+                <constraint firstItem="cdQ-ea-g0M" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="nPN-zu-VCY"/>
                 <constraint firstItem="0Le-5e-9W6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="p3O-bQ-2r5"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zEm-xi-lVw" secondAttribute="trailing" constant="85.5" id="q4Z-vT-8NP"/>
                 <constraint firstItem="MBs-hq-isJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="rzB-zf-Zsg"/>

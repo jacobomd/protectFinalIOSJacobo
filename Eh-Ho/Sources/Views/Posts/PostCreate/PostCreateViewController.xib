@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,13 +26,13 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ufV-4J-oiH">
-                    <rect key="frame" x="10" y="100" width="394" height="150"/>
+                    <rect key="frame" x="10" y="140" width="394" height="90"/>
                     <subviews>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add content by new post" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xrx-ir-ktA" userLabel="TextfieldNewPost">
-                            <rect key="frame" x="0.0" y="0.0" width="394" height="150"/>
+                        <textField opaque="NO" contentMode="top" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add content ..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xrx-ir-ktA" userLabel="TextfieldNewPost">
+                            <rect key="frame" x="0.0" y="0.0" width="394" height="90"/>
                             <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="150" id="rRZ-Pa-19E"/>
+                                <constraint firstAttribute="height" constant="90" id="rRZ-Pa-19E"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <textInputTraits key="textInputTraits"/>
@@ -51,7 +51,7 @@
                 <constraint firstItem="SSr-Qx-DbK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="LyU-xv-Dtv"/>
                 <constraint firstItem="a1A-dY-1Hv" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="QGp-k7-mIW"/>
                 <constraint firstItem="f2d-rt-G3I" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="QJK-VX-IdA"/>
-                <constraint firstItem="ufV-4J-oiH" firstAttribute="top" secondItem="SSr-Qx-DbK" secondAttribute="top" constant="100" id="RqV-oc-bhv"/>
+                <constraint firstItem="ufV-4J-oiH" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="140" id="RqV-oc-bhv"/>
                 <constraint firstItem="f2d-rt-G3I" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="YcG-XX-5LQ"/>
                 <constraint firstAttribute="bottom" secondItem="f2d-rt-G3I" secondAttribute="bottom" id="a1j-CC-7rO"/>
                 <constraint firstAttribute="bottom" secondItem="SSr-Qx-DbK" secondAttribute="bottom" id="fRL-UQ-l5C"/>

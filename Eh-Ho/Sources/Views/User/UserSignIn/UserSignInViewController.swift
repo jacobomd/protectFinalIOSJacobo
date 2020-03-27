@@ -61,11 +61,13 @@ class UserSignInViewController: UIViewController {
     self.title = "Login"
     let backItem = UIBarButtonItem()
     backItem.title = "login"
-    let color = UIColor(red: 291/255, green: 99/255, blue: 0/255, alpha: 1.0)
-    backItem.tintColor = color
+    let colorOrange = UIColor.systemOrange
+    let colorBlack = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1.0)
+    backItem.tintColor = colorBlack
     navigationItem.backBarButtonItem = backItem
+    navigationController?.navigationBar.barTintColor = colorOrange
         
-    navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: color, NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Light", size: 24)!]
+   // navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: color, NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Light", size: 24)!]
         
     }
     
@@ -110,18 +112,18 @@ class UserSignInViewController: UIViewController {
 //MARK: - Comunication with ViewModel
 protocol UserSignInViewControllerProtocol: class {
     func showUserLogged(value: String)
-    func showPasswReset(login: String)
+    func showPasswReset(valueResult: String)
     func showErrorUserLogged(error: String)
 }
 
 extension UserSignInViewController: UserSignInViewControllerProtocol {
     
     func showUserLogged(value: String) {
-        showUserLoggedAlert (message: "Usario logueado satisfactoriamente con el nombre de : \(value)")
+        showUserLoggedAlert (message: "User successfully logged in with the name of: \(value)")
     }
     
-    func showPasswReset(login: String) {
-        showUserLoggedAlert(message: "We found an account that matches the username \(login), you should receive an email with instructions on how to reset your password shortly.")
+    func showPasswReset(valueResult: String) {
+        showUserLoggedAlert(message: "\(valueResult)")
     }
     
     func showErrorUserLogged(error: String) {

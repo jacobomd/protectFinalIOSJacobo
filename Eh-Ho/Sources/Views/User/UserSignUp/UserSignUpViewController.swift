@@ -55,11 +55,13 @@ class UserSignUpViewController: UIViewController {
     self.title = "Register"
     let backItem = UIBarButtonItem()
     backItem.title = "topics"
-    let color = UIColor(red: 291/255, green: 99/255, blue: 0/255, alpha: 1.0)
-    backItem.tintColor = color
+    let colorOrange = UIColor.systemOrange
+    let colorBlack = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1.0)
+    backItem.tintColor = colorBlack
     navigationItem.backBarButtonItem = backItem
+    navigationController?.navigationBar.barTintColor = colorOrange
         
-    navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: color, NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Light", size: 24)!]
+    //navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: color, NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Light", size: 24)!]
         
     }
         

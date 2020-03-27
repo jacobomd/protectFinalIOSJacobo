@@ -36,15 +36,17 @@ class PostCreateViewController: UIViewController {
     }
     
     private func setUI() {
-        let color = UIColor(red: 243/255, green: 144/255, blue: 0/255, alpha: 1.0)
         let backItem = UIBarButtonItem()
         backItem.title = "Volver"
         
-        backItem.tintColor = color
+        let colorOrange = UIColor.systemOrange
+        let colorBlack = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1.0)
+        backItem.tintColor = colorBlack
         navigationItem.backBarButtonItem = backItem
+        navigationController?.navigationBar.barTintColor = colorOrange
         let createdNewPost = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(addNewPost))
-        createdNewPost.tintColor = color
-        createdNewPost.image = UIImage(named: "send")
+        createdNewPost.tintColor = colorBlack
+        createdNewPost.image = UIImage(named: "navigation")
         
         // Add button
         navigationItem.rightBarButtonItems = [createdNewPost]

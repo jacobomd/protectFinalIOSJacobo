@@ -63,6 +63,10 @@ class TopicsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if CheckInternet.Connection() == false {
+            showModeOfflineAlert(message: "Attention !, it has no internet connection, therefore it will enter offline mode")
+        }
+        
         table.delegate = self
         table.dataSource = self
         
@@ -83,12 +87,15 @@ class TopicsViewController: UIViewController {
         self.title = "Topics"
         let backItem = UIBarButtonItem()
         backItem.title = "topics"
-        let color = UIColor(red: 291/255, green: 99/255, blue: 0/255, alpha: 1.0)
-        backItem.tintColor = color
+        let colorOrange = UIColor.systemOrange
+        let colorBlack = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1.0)
+        backItem.tintColor = colorBlack
         navigationItem.backBarButtonItem = backItem
+        navigationController?.navigationBar.barTintColor = colorOrange
+        
         
         let userLogin = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(displayLogin))
-        userLogin.tintColor = color
+        userLogin.tintColor = colorBlack
         
         if Session.loggedSession() { // Si estas logueado
         userLogin.image = UIImage(named: "logOut")
@@ -98,7 +105,7 @@ class TopicsViewController: UIViewController {
         }
         
         navigationItem.rightBarButtonItems = [userLogin]
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: color, NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Light", size: 24)!]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: colorBlack, NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Light", size: 24)!]
         
     }
     
@@ -116,6 +123,18 @@ class TopicsViewController: UIViewController {
     }
         
     //MARK: - Privates functions
+    
+    private func showModeOfflineAlert(message: String)  {
+        //Create the alert
+        let alert = UIAlertController(title: message, message: nil, preferredStyle: .alert)
+        
+        //Creamos la accion
+        let action = UIAlertAction(title: "ok", style: .default, handler: nil)
+        
+        //Aañadimos a la alerta
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
+    }
     
     private func showCreateTopicAlert(message: String)  {
         //Create the alert

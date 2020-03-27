@@ -10,11 +10,11 @@ import Foundation
 
 // MARK: - Welcome
 struct PasswordResetResponse: Codable {
-    //let result: String
+    let result: String?
     let userFound: Bool
 
     enum CodingKeys: String, CodingKey {
-       // case result
+        case result
         case userFound = "user_found"
     }
 }
