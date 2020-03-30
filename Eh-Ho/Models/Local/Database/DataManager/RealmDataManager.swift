@@ -23,7 +23,7 @@ class RealmDataManager {
         }
     }
     
-   // Guardar todos los topics de la lista
+   //MARK: Guardar todos los topics 
     func saveTopics(topicDB: [Topic]) {
         
         for topic in topicDB {
@@ -36,7 +36,7 @@ class RealmDataManager {
         }
     }
     
-    // Guardar todos los posts
+    //MARK: Guardar todos los posts
     func savePosts(postDB: [LatestPost]) {
         for post in postDB {
             try! realm.write {
@@ -86,7 +86,7 @@ class RealmDataManager {
         return maxId + 1
     }
     
-    // Cargar todos los topics en la lista cuando no hay conexion a internet.
+    //MARK: Cargar todos los topics en la lista cuando no hay conexion a internet.
     func loadTopics() -> Array<Topic> {
         let data = realm.objects(TopicDB.self).sorted(byKeyPath: "last_posted_at", ascending: false)
         return data.compactMap { topicDB in
@@ -94,7 +94,7 @@ class RealmDataManager {
         }
     }
     
-    // Cargar todos los posts de un determinado topic cuando no hay conexion a internet.
+    //MARK: Cargar todos los posts de un determinado topic cuando no hay conexion a internet.
     func loadPostsByTopic(id: Int) -> Array<Post2> {
         let data = realm.objects(PosterDB.self).filter("topic_id = \(id)").sorted(byKeyPath: "created_at",ascending: true)
         return data.compactMap{ postDB in
@@ -117,8 +117,11 @@ class RealmDataManager {
                      createdAt: topicDB.created_at,
                      lastPostedAt: topicDB.last_posted_at,
                      views: topicDB.views,
-                     posters: postetDataData(from: topicDB.posters))
-        
+                     posters: postetDataData(from: topicDB.posters),
+                     avatar_template: "",
+                     username: ""
+        )
+                    
     }
     
     private func postetDataData(from posterDB: List<PostersByTopicDB>) -> [Poster] {

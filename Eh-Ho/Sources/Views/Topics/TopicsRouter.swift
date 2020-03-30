@@ -16,14 +16,12 @@ class TopicsRouter {
         
         let sessionApi = SessionAPI()
         let topicRepository = TopicsRepositoryImpl(session: sessionApi)
-    
         let router = TopicsRouter()
         let viewModel = TopicsViewModel(router: router, topicRepository: topicRepository)
         let viewController = TopicsViewController(viewModel: viewModel)
-        
         viewModel.view = viewController
         router.viewController = viewController
-        
+    
         return viewController
         
     }

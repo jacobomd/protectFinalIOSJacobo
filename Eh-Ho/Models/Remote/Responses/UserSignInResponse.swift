@@ -10,11 +10,9 @@ import Foundation
 
 // MARK: - UserSignInResponse
 struct UserSignInResponse: Codable {
-    //let userBadges: [CardBadge]
     let user: LoginUser
 
     enum CodingKeys: String, CodingKey {
-        //case userBadges = "user_badges"
         case user
     }
 }

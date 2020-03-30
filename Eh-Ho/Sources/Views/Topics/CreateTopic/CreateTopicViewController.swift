@@ -10,16 +10,17 @@ import UIKit
 
 class CreateTopicViewController: UIViewController {
 
+    //MARK: - Outlets
     @IBOutlet weak var txtTitle: UITextField!
     @IBOutlet weak var txtDescription: UITextField!
     
-    
+    //MARK: - Properties
     let viewModel: CreateTopicsViewModel
     var topics: AddNewTopicResponse?
-    
     var textTitle: String?
     var textDescription: String?
     
+    //MARK: - Inits
     init(viewModel: CreateTopicsViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -29,12 +30,14 @@ class CreateTopicViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    //MARK: - Cycle life
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
         self.title = "Create topic"
     }
     
+    //MARK: - UI
     private func setUI() {
         let backItem = UIBarButtonItem()
         backItem.title = "topics"
@@ -52,19 +55,14 @@ class CreateTopicViewController: UIViewController {
         navigationItem.rightBarButtonItems = [createdNewPost]
     }
     
+    //MARK: - Navigations
     @objc func addNewPost() {
         textTitle = txtTitle.text
         textDescription = txtDescription.text
-        
-        if (txtTitle.text!.count < 15) {
-            showPustTopicAlert(message: "Insert more than 15 characters in title")
-        }else if (txtDescription.text!.count < 20) {
-            showPustTopicAlert(message: "Insert more than 20 characters in description")
-        }else {
-            viewModel.didTapInTopic(title: textTitle!, raw: textDescription!)
-            txtTitle.text = ""
-            txtDescription.text = ""
-        }
+
+        viewModel.didTapInTopic(title: textTitle!, raw: textDescription!)
+        txtTitle.text = ""
+        txtDescription.text = ""
     }
 
 }
@@ -82,12 +80,12 @@ extension CreateTopicViewController: CreateTopicsViewControllerProtocol {
     }
     
     func showError(with message: String) {
-        //AQUI ENSEÑAMOS ALERTA
-        showPustTopicAlert(message: "An error occurred while creating the topic")
+        showPustTopicAlert(message: message)
     }
     
 }
 
+//MARK: - Extensions
 extension CreateTopicViewController {
     
     private func showPustTopicAlert(message: String)  {

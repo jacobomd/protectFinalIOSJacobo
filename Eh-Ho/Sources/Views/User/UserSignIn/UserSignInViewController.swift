@@ -54,10 +54,8 @@ class UserSignInViewController: UIViewController {
         showPasswResetAlert()
     }
     
-    
     //MARK: - UI
     func setupUI() {
-
     self.title = "Login"
     let backItem = UIBarButtonItem()
     backItem.title = "login"
@@ -66,8 +64,6 @@ class UserSignInViewController: UIViewController {
     backItem.tintColor = colorBlack
     navigationItem.backBarButtonItem = backItem
     navigationController?.navigationBar.barTintColor = colorOrange
-        
-   // navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: color, NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Light", size: 24)!]
         
     }
     
@@ -106,10 +102,7 @@ class UserSignInViewController: UIViewController {
     }
 }
 
-
-
-
-//MARK: - Comunication with ViewModel
+//MARK: - Comunication  ViewModel
 protocol UserSignInViewControllerProtocol: class {
     func showUserLogged(value: String)
     func showPasswReset(valueResult: String)

@@ -9,6 +9,7 @@
 import Foundation
 import Strongbox
 
+// Clase para guardar credenciales en el keychain y comprobar
 public class Session {
     
     struct Constants {static let keySession = "keySession"}

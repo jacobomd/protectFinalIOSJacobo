@@ -8,6 +8,7 @@
 
 import SystemConfiguration
 
+// Clase para comprobar si existe conexion a internet en la app
 public class CheckInternet{
     
     class func Connection() -> Bool{

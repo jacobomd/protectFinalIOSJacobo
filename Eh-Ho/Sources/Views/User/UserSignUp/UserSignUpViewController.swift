@@ -60,9 +60,7 @@ class UserSignUpViewController: UIViewController {
     backItem.tintColor = colorBlack
     navigationItem.backBarButtonItem = backItem
     navigationController?.navigationBar.barTintColor = colorOrange
-        
-    //navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: color, NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Light", size: 24)!]
-        
+                
     }
         
 }

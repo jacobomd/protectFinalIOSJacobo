@@ -10,11 +10,13 @@ import Foundation
 
 class PostCreateViewModel {
     
-   weak var  view: PostCreateViewControllerProtocol?
+   //MARK: - Properties
+    weak var  view: PostCreateViewControllerProtocol?
     let router: PostCreateRouter
     let id: Int
     let postsRepository: PostsRepository
     
+    //MARK: - Inits
     init(router: PostCreateRouter, id: Int, postsRepository: PostsRepository) {
         self.router = router
         self.id = id
@@ -22,19 +24,21 @@ class PostCreateViewModel {
 
     }
     
+    //MARK: - Public functions
     func didTapInTopic(raw: String) {
         createNewPostByTopic(raw: raw)
-        router.navigateToPosts()
+        
     }
     
+    //MARK: - Private functions
     private func createNewPostByTopic(raw: String) {
         postsRepository.createNewPost(id_topic: self.id, raw: raw) { [weak self] result in
             switch result {
             case .success( _):
-                break
+                self?.router.navigateToPosts()
                 // no enviamos nada a mostrar a la vista
-            case .failure:
-                self?.view?.showError(with: "Error")
+            case .failure(let error):
+                self?.view?.showError(with: error.errors.joined(separator: ","))
             }
         }
     }

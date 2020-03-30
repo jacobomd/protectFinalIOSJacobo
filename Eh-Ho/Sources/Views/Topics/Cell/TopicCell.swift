@@ -8,9 +8,9 @@
 
 import UIKit
 
-
 class TopicCell: UITableViewCell {
     
+    //MARK: - Properties
     var actionBlock: (() -> Void)? = nil
     
     //MARK: - Outlets
@@ -37,11 +37,12 @@ class TopicCell: UITableViewCell {
         loadImage(with: avatarUserImage)
     }
     
-    
+    //MARK: - Navigations
     @IBAction func butAvatar(_ sender: Any) {
         actionBlock?()
     }
     
+    //MARK: - Private functions
     private func loadImage(with imagePath: String) {
         DispatchQueue.global().async { [weak self] in
             if imagePath.isEmpty || !CheckInternet.Connection() {
@@ -53,7 +54,6 @@ class TopicCell: UITableViewCell {
                 let data = try? Data(contentsOf: url!)
                 DispatchQueue.main.async {
                     self?.buttonAvatar.setImage(UIImage(data: data!), for: .normal)
-                    
                 }
             }
         }
@@ -62,5 +62,4 @@ class TopicCell: UITableViewCell {
     static func estimateRowHeight() -> CGFloat {
         return 120.0
     }
-    
 }

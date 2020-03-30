@@ -8,7 +8,7 @@
 
 import Foundation
 
-// MARK: - Welcome
+// MARK: - ListPostsByTopicResponse
 struct ListPostsByTopicResponse: Codable {
     let postStream: PostStream2
     let id: Int
@@ -32,7 +32,6 @@ struct Post2: Codable {
     let cooked: String
     let topicID: Int
 
-    
     enum CodingKeys: String, CodingKey {
         case id
         case username

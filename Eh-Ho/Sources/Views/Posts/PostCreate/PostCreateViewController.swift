@@ -10,14 +10,15 @@ import UIKit
 
 class PostCreateViewController: UIViewController {
 
-        
+   //MARK: - Outlets
     @IBOutlet weak var textfieldRawPost: UITextField!
     let viewModel: PostCreateViewModel
     
+    //MARK: - Propierties
     var textoRaw: String = ""
-    
     var posts: AddNewPostResponse?
     
+    //MARK: - Inits
     init(viewModel: PostCreateViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -27,7 +28,7 @@ class PostCreateViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
+    //MARK: - Cycle life
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "New post"
@@ -35,6 +36,7 @@ class PostCreateViewController: UIViewController {
     
     }
     
+    //MARK: - UI
     private func setUI() {
         let backItem = UIBarButtonItem()
         backItem.title = "posts"
@@ -50,6 +52,19 @@ class PostCreateViewController: UIViewController {
         
         // Add button
         navigationItem.rightBarButtonItems = [createdNewPost]
+    }
+    
+    //MARK: - Private functions
+    private func showCreatePostAlert(message: String)  {
+        //Create the alert
+        let alert = UIAlertController(title: message, message: nil, preferredStyle: .alert)
+        
+        //Creamos la accion
+        let action = UIAlertAction(title: "ok", style: .default, handler: nil)
+        
+        //Aañadimos a la alerta
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
     }
     
     @objc func addNewPost() {
@@ -73,7 +88,6 @@ extension PostCreateViewController: PostCreateViewControllerProtocol {
     }
     
     func showError(with message: String) {
-        //AQUI ENSEÑAMOS ALERTA
-        print("ERROR")
+        showCreatePostAlert(message: message)
     }
 }

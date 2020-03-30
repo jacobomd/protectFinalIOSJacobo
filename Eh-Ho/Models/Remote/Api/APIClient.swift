@@ -38,7 +38,6 @@ final class SessionAPI {
             } catch let error {
                 DispatchQueue.main.async {
                     let apiError = ApiErrorResponse(errors: [error.localizedDescription], action: "An error ocurred, try again later!")
-                    //print("ERRORRRRRR : \(apiError.localizedDescription)")
                     completion(.failure(apiError))
                 }
             }

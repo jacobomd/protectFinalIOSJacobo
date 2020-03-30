@@ -8,7 +8,7 @@
 
 import Foundation
 
-// MARK: - Welcome
+// MARK: - PasswordResetResponse
 struct PasswordResetResponse: Codable {
     let result: String?
     let userFound: Bool

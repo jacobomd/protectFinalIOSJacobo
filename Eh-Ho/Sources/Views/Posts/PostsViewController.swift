@@ -76,7 +76,7 @@ class PostsViewController: UIViewController {
     }
     
     
-    //Mark: - UI
+    //MARK: - UI
     func setupUI() {
         
         let backItem = UIBarButtonItem()
@@ -97,6 +97,7 @@ class PostsViewController: UIViewController {
         
     }
     
+    //MARK: - Navigation
     @objc func createMessage() {
         
         if CheckInternet.Connection() {
@@ -110,6 +111,7 @@ class PostsViewController: UIViewController {
         }
     }
     
+    //MARK: - Private functions
     private func convertDateFormater(date: String) -> String {
         
         let dateFormatter = DateFormatter()
@@ -166,7 +168,6 @@ extension PostsViewController: UITableViewDataSource {
                 else { return UITableViewCell()
             }
             
-    
                 var resultado = posts[indexPath.row].cooked
                 resultado = resultado.replacingOccurrences(of: "<p>", with: "", options: NSString.CompareOptions.literal, range: nil).capitalizingFirstLetter()
                 resultado = resultado.replacingOccurrences(of: "</p>", with: "", options: NSString.CompareOptions.literal, range: nil).capitalizingFirstLetter()
@@ -188,7 +189,6 @@ extension PostsViewController: UITableViewDataSource {
                 cell.configure(avatarImage: avatarImage!, userName: userName,descripcion: descripcion,
                                date: dateUpDate)
                 
-            
             cellFinal = cell
             
         }
@@ -197,7 +197,6 @@ extension PostsViewController: UITableViewDataSource {
     }
     
 }
-
 
 extension PostsViewController: UITableViewDelegate {
     

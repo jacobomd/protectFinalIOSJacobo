@@ -8,7 +8,7 @@
 
 import Foundation
 
-// MARK: - Welcome
+// MARK: - UserSignUpResponse
 struct UserSignUpResponse: Codable {
         let success, active: Bool
         let message: String

@@ -30,8 +30,7 @@ class TopicsViewModel {
     
     func didTapAvatarUser(userName: String) {
         detailUser(userName: userName)
-        listMessagPrivUser(userName: userName)
-        //TODO : - FALTA IMPLEMENTACIO NUMERO DE MENSAJES PRIVADOS
+        //listMessagPrivUser(userName: userName)
     }
     
     //MARK: - Navigations
@@ -44,7 +43,6 @@ class TopicsViewModel {
     }
     
     //MARK: - Private functions
-    
     private func fetchListTopics () {
         
         if CheckInternet.Connection() {
@@ -52,7 +50,35 @@ class TopicsViewModel {
                 switch result {
                 case .success(let value):
                     // successss
-                    self?.view?.showListTopics(topics: value.topicList.topics, users: value.users)
+                    var image = ""
+                    var username = ""
+                    let topics: Array<Topic> = value.topicList.topics.compactMap { topic  in
+                        for poster in topic.posters {
+                            if poster.description.starts(with: "Original Poster") {
+                                let userPoster = poster.userID
+                                for user in value.users {
+                                    if userPoster == user.id {
+                                        let avatar_template = user.avatarTemplate
+                                        let avatarFinal = avatar_template.replacingOccurrences(of: "{size}", with: "64")
+                                        image = "https://mdiscourse.keepcoding.io/\(avatarFinal)"
+                                        username = user.username
+                                    }
+                                }
+                            }
+                        }
+
+                        let id = topic.id
+                        let title = topic.title
+                        let visits = topic.views
+                        let postsCount = topic.postsCount
+                        let lastPostedAt = topic.lastPostedAt
+                        let createdAt = topic.createdAt
+                        let posters = topic.posters
+                        
+                        return Topic(id: id, title: title, postsCount: postsCount, createdAt: createdAt, lastPostedAt: lastPostedAt, views: visits, posters: posters, avatar_template: image, username: username)
+                    }
+                    
+                    self?.view?.showListTopics(topics: topics)
                     self?.realmDataManager.saveTopics(topicDB: value.topicList.topics)
                 case .failure(let error):
                     // error

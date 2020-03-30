@@ -12,16 +12,14 @@ import PopupDialog
 class TopicsViewController: UIViewController {
 
     //MARK: - Outlets
-   
     @IBOutlet weak var table: UITableView!
     @IBOutlet weak var search: UISearchBar!
-    
     @IBOutlet weak var butNewTopic: UIButton!
-
     
     //MARK: - Propierties
     let viewModel : TopicsViewModel
     var topics : [Topic] = []
+    var imageAvatar : String = ""
     var idTopics: Int = 0
     var users : [User] = []
     var listMessagPriv: [TopicMessagePrivateUser] = []
@@ -92,7 +90,6 @@ class TopicsViewController: UIViewController {
         backItem.tintColor = colorBlack
         navigationItem.backBarButtonItem = backItem
         navigationController?.navigationBar.barTintColor = colorOrange
-        
         
         let userLogin = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(displayLogin))
         userLogin.tintColor = colorBlack
@@ -217,7 +214,8 @@ class TopicsViewController: UIViewController {
         let labelLastSeenFormater = convertDateFormater(date: labelLastSeen)
         
         // Number privates messages
-        let labelMessPriva = listMessagPriv.count.description
+        //let labelMessPriva = listMessagPriv.count.description
+        let labelMessPriva = "?"
         
         
         detailUserVC.configure(avatar: imagAvatar, username: labelUsername, name: labelName, statusModerator: labelStatusModerator, lastSeen: labelLastSeenFormater, listMessagPriv: labelMessPriva)
@@ -269,41 +267,34 @@ extension TopicsViewController: UITableViewDataSource{
         var numVisitas = 0
         var numComents = 0
         var dateTopic = ""
-        var posters = topics[0].posters
+        var userrr = ""
+        //var posters = topics[0].posters
         
         if searching {
-             title = topicsfiltered[indexPath.row].title
-             numVisitas = topicsfiltered[indexPath.row].views
-             numComents = topicsfiltered[indexPath.row].postsCount
-             dateTopic = topicsfiltered[indexPath.row].createdAt
-             posters = topicsfiltered[indexPath.row].posters
+            title = topicsfiltered[indexPath.row].title
+            numVisitas = topicsfiltered[indexPath.row].views
+            numComents = topicsfiltered[indexPath.row].postsCount
+            dateTopic = topicsfiltered[indexPath.row].createdAt
+            imageAvatar = topicsfiltered[indexPath.row].avatar_template!
+            userrr = topicsfiltered[indexPath.row].username!
+            // posters = topicsfiltered[indexPath.row].posters
         } else {
             title = topics[indexPath.row].title
             numVisitas = topics[indexPath.row].views
             numComents = topics[indexPath.row].postsCount
             dateTopic = topics[indexPath.row].createdAt
-            posters = topics[indexPath.row].posters
+            imageAvatar = topics[indexPath.row].avatar_template!
+            userrr = topics[indexPath.row].username!
+           // posters = topics[indexPath.row].posters
         }
         
         let dateTopicFormater = convertDateFormater(date: dateTopic)
-        var image : String = ""
-        
-        for poster in posters {
-            if poster.description.starts(with: "Original Poster") {
-                let userPoster = poster.userID
-                for user in users {
-                    if userPoster == user.id {
-                        let avatar = user.avatarTemplate
-                        let avatarFinal = avatar.replacingOccurrences(of: "{size}", with: "64")
-                        image = "https://mdiscourse.keepcoding.io/\(avatarFinal)"
-                        cell.actionBlock = {
-                            self.viewModel.didTapAvatarUser(userName: user.username)
-                        }
-                    } 
-                }
-            }
+       
+        cell.actionBlock = {
+            self.viewModel.didTapAvatarUser(userName: userrr)
         }
-        cell.configure(title: title, numVisitas: "\(numVisitas)", numComents: "\(numComents)", dateTopic: "\(dateTopicFormater)", avatarUserImage: image )
+        
+        cell.configure(title: title, numVisitas: "\(numVisitas)", numComents: "\(numComents)", dateTopic: "\(dateTopicFormater)", avatarUserImage: imageAvatar )
         return cell
     }
 }
@@ -325,7 +316,7 @@ extension TopicsViewController: UITableViewDelegate {
 
 //MARK: - ViewModel Comunication
 protocol TopicsViewControllerProtocol: class {
-    func showListTopics (topics: [Topic], users: [User])
+    func showListTopics (topics: [Topic])
     func showListAvatarByTopic(avatar: String)
     func showDetailUser(detailUser: LoginUser)
     func showListMessagPrivUser(listMessagPriv: [TopicMessagePrivateUser])
@@ -352,9 +343,8 @@ extension TopicsViewController: TopicsViewControllerProtocol {
         self.showCustomDialog()
     }
    
-    func showListTopics(topics: [Topic], users: [User]) {
+    func showListTopics(topics: [Topic]) {
         self.topics = topics
-        self.users = users
         table.reloadData()
     }
     
@@ -369,7 +359,7 @@ extension TopicsViewController: TopicsViewControllerProtocol {
     }
 }
 
-
+//MARK: - Search filter
 extension TopicsViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         topicsfiltered = topics
@@ -383,9 +373,8 @@ extension TopicsViewController: UISearchBarDelegate {
     }
 }
 
-
+//MARK: - Spinner
 var vSpinner : UIView?
- 
 extension UIViewController {
     func showSpinner(onView : UIView) {
         let spinnerView = UIView.init(frame: onView.bounds)

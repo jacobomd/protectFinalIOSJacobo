@@ -10,6 +10,7 @@ import UIKit
 
 class DeatilUserViewController: UIViewController {
     
+    //MARK: - Outlets
     @IBOutlet weak var imagAvatar: UIImageView!
     @IBOutlet weak var labelUserName: UILabel!
     @IBOutlet weak var labelName: UILabel!
@@ -17,8 +18,7 @@ class DeatilUserViewController: UIViewController {
     @IBOutlet weak var labelLastSeen: UILabel!
     @IBOutlet weak var labelNumMessagPriv: UILabel!
     
-    
-    
+    //MARK: - Cycle life
     override func viewDidLoad() {
         super.viewDidLoad()
         imagAvatar.frame = CGRect(x: 0, y: 0, width: 130, height: 130)
@@ -26,6 +26,7 @@ class DeatilUserViewController: UIViewController {
         imagAvatar.layer.masksToBounds = true
     }
     
+    //MARK: - Public functions
     func configure(avatar: String, username: String, name: String, statusModerator: String, lastSeen: String, listMessagPriv: String) {
         labelUserName.text = username
         labelName.text = name
@@ -36,6 +37,7 @@ class DeatilUserViewController: UIViewController {
       
     }
     
+    //MARK: - Public functions
     private func loadImage(with imagePath: String) {
         DispatchQueue.global().async { [weak self] in
             let url = URL(string: imagePath)
