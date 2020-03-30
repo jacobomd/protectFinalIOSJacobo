@@ -361,14 +361,19 @@ extension TopicsViewController: TopicsViewControllerProtocol {
 
 //MARK: - Search filter
 extension TopicsViewController: UISearchBarDelegate {
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         topicsfiltered = topics
         if searchText.isEmpty == false {
             topicsfiltered = topics.filter({
                 $0.title.lowercased().contains(searchText.lowercased())
             })
+            searching = true
+        }else {
+            searchBar.resignFirstResponder()
+            searching = false
         }
-        searching = true
+        
         table.reloadData()
     }
 }
