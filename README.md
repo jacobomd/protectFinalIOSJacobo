@@ -7,7 +7,7 @@ DESCRIPCION DEL PROYECTO
   Ademas se genera el código para la estructura de topics y posts de cara al patrón de arquitectura MVVM.
   Por ultimo se queda implementado el módulo Pods para su posterior utilización por si fuera necesario.
   
-  ![ScreenShot](https://github.com/jacobomd/protectFinalIOSJacobo/blob/master/Eh-Ho/Resources/ArtWork/Assets.xcassets/Screenshot%20login%20user.imageset/Screenshot%20login%20user.png)
+   <img src="https://github.com/jacobomd/protectFinalIOSJacobo/blob/master/Eh-Ho/Resources/ArtWork/Assets.xcassets/Screenshot%20initial.imageset/Screenshot%20initial.png" height="250">
   
 . Feature-Login y Alta:
   En primer lugar a pesar de no estar dentro de esta feature se genera la funcionalidad para el visionado de la lista de 
@@ -18,6 +18,8 @@ DESCRIPCION DEL PROYECTO
   Una vez terminado lo anterior se procede a la implementación del detalle del usuario que en este caso aparece un 
   dialog emergente al pulsar en cada avatar de cada topic.
   
+  <img src="https://github.com/jacobomd/protectFinalIOSJacobo/blob/master/Eh-Ho/Resources/ArtWork/Assets.xcassets/Screenshot%20login%20user.imageset/Screenshot%20login%20user.png" height="250">
+  
 . Feature-topics:
   Como ya se parte de que tenemos funcionando desde la anterior feature el visionado de la lista de topics se procede a 
   la implementación de la lógica en cuanto a la lista de posts por topic. A continuación se realiza la lógica del creado
@@ -26,16 +28,24 @@ DESCRIPCION DEL PROYECTO
   con sus permisos y validaciones ya que tanto para la creación de topics como de post estan sujetas tanto a si 
   estas logueado como si tienes conexión a internet.
   
+   <img src="https://github.com/jacobomd/protectFinalIOSJacobo/blob/master/Eh-Ho/Resources/ArtWork/Assets.xcassets/Screenshot%20list%20topic.imageset/Screenshot%20list%20topic.png" height="250">
+   
+   <img src="https://github.com/jacobomd/protectFinalIOSJacobo/blob/master/Eh-Ho/Resources/ArtWork/Assets.xcassets/Screenshot%20list%20posts.imageset/Screenshot%20list%20posts.png" height="250">
+  
 . Feature-search:
   En esta feature se genera toda la lógica para el filtrado de topic en la lista de topics. Para ello se utiliza
   un searchbar. Una vez implementado se realizan mejoras para que funcione correctamente también con la persistencia
   en cuanto a cuando no tenemos conexión a internet.
+  
+  <img src="https://github.com/jacobomd/protectFinalIOSJacobo/blob/master/Eh-Ho/Resources/ArtWork/Assets.xcassets/Screenshot%20search.imageset/Screenshot%20search.png" height="250">
   
 . Feature-persistence:
   En esta feature se realiza toda la lógica que corresponde a la persistencia de la app. Para ello se ha utilizado la
   librería realm para la base de datos, para ello se genera una base de datos en realm en el cual se le carga los 
   datos en cuanto a lista de topics como  lista de posts para posteriormente acceder a dichos datos cuando la app
   lo requiera, que en este caso es para cuando dejamos de tener conexion a internet en el móvil.
+  
+  <img src="https://github.com/jacobomd/protectFinalIOSJacobo/blob/master/Eh-Ho/Resources/ArtWork/Assets.xcassets/Screenshot%20persistence.imageset/Screenshot%20persistence.png" height="250">
   
 . Feature-improvements:
   En esta feature se ha realizado todas las mejoras posibles que se han quedado pendientes durante el transcurso 
