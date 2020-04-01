@@ -7,7 +7,7 @@ DESCRIPCION DEL PROYECTO
   Ademas se genera el código para la estructura de topics y posts de cara al patrón de arquitectura MVVM.
   Por ultimo se queda implementado el módulo Pods para su posterior utilización por si fuera necesario.
   
-  
+  https://raw.githubusercontent.com/jacobomd/protectFinalIOSJacobo/tree/master/Eh-Ho/Resources/ArtWork/Assets.xcassets/message.imageset
   
 . Feature-Login y Alta:
   En primer lugar a pesar de no estar dentro de esta feature se genera la funcionalidad para el visionado de la lista de 
